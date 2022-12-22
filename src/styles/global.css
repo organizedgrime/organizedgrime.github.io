@@ -3,6 +3,20 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
+
+/* Register our custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'Neue Pixel Sans';
+  src: url('/fonts/neue-pixel-sans.regular.ttf') format('tff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: 'Neue Pixel Sans', sans-serif;
+}
+
 body {
 	font-family: Verdana, sans-serif;
 	margin: auto;
