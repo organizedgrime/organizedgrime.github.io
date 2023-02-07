@@ -1,0 +1,37 @@
+---
+import Rive from '@rive-app/react-canvas';
+const { title, appIcon } = Astro.props;
+---
+<div class="container">
+  <div class="icon-container">
+  </div>
+  <p>{title}</p>
+</div>
+
+
+<style>
+
+  .container {
+    margin: 0 auto;
+  }
+
+  /* Apple specifies a corner raidus of 80 for their 512x512 icon */
+	.icon-container {
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #ececec;
+    position: relative;
+  }
+
+
+  /* Sumerian App */
+  .sumerian {
+
+  }
+
+</style>

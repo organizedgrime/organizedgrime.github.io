@@ -4,6 +4,7 @@ title: "Ancient Sumerian Outside Academia"
 description: "Learn about the Ancient Sumerian language with me"
 pubDate: "April 09 2022"
 heroImage: "/images/blog/sumerian.jpg"
+appIcon: "/images/blog/sumerian.jpg"
 ---
 There are many areas of interest that for most of modern history, have been exclusive to the select few that were simply rich and bored enough to study them. The advent of the internet, along with changes in attitudes on learning in younger peoples, is slowly starting to dissolve those barriers. 
 After learning that the [Ancient Sumerian Language](https://en.wikipedia.org/wiki/Sumerian_language) is the oldest written language we know of, unrelated to any other known language, I immediately became entranced not only by its grammatical and syntactical structure, but equally by the culture that spawned it.
