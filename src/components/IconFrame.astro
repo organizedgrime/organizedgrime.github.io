@@ -1,11 +1,11 @@
 ---
-import RiveComponent from './RiveComponent';
+import AppIcon from './rives/AppIcon';
 const { title, appIcon, url } = Astro.props;
 ---
 <div class="container">
   <a href={url}>
     <div class="icon-container">
-      <RiveComponent client:visible title={title} filename="familiar-spirit" />
+        <AppIcon title={title} client:visible />
     </div>
     <span>{title}</span>
   </a>

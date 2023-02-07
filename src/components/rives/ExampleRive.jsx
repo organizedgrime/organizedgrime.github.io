@@ -1,8 +1,8 @@
 import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
 
-export default function RiveComponent(props) {
+export default function ExampleRive() {
   const { rive, RiveComponent } = useRive({
-    src: '/rives/' + props.filename + '.riv',
+    src: '/rives/poison-loader.riv',
     autoplay: false,
     layout: new Layout({
       fit: Fit.Fill,
