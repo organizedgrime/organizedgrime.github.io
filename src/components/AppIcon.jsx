@@ -1,14 +1,13 @@
 import { useRive } from '@rive-app/react-canvas';
 
-export default function AppIcon() {
+export default function AppIcon(props) {
   const { rive, RiveComponent } = useRive({
-    src: '/rives/poison-loader.riv',
-    autoplay: true,
+    src: '/rives/' + props.filename + '.riv',
+    autoplay: false,
   });
 
   return (
     <div>
-      <h1>this is a rive component</h1>
       <RiveComponent
         onMouseEnter={() => rive && rive.play()}
         onMouseLeave={() => rive && rive.pause()}
