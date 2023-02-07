@@ -1,12 +1,14 @@
 ---
 import RiveComponent from './RiveComponent';
-const { title, appIcon } = Astro.props;
+const { title, appIcon, url } = Astro.props;
 ---
 <div class="container">
-  <div class="icon-container">
-    <RiveComponent client:visible title={title} filename="poison-loader" />
-  </div>
-  <span>{title}</span>
+  <a href={url}>
+    <div class="icon-container">
+      <RiveComponent client:visible title={title} filename="familiar-spirit" />
+    </div>
+    <span>{title}</span>
+  </a>
 </div>
 
 <style>
@@ -31,5 +33,10 @@ const { title, appIcon } = Astro.props;
   span {
     display: table;
     margin: 0 auto;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
   }
 </style>
