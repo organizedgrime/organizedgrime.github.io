@@ -1,17 +1,19 @@
-import { useRive } from '@rive-app/react-canvas';
+import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
 
 export default function AppIcon(props) {
   const { rive, RiveComponent } = useRive({
     src: '/rives/' + props.filename + '.riv',
     autoplay: false,
+    layout: new Layout({
+      fit: Fit.Fill,
+      alignment: Alignment.TopCenter,
+    }),
   });
 
   return (
-    <div>
-      <RiveComponent
-        onMouseEnter={() => rive && rive.play()}
-        onMouseLeave={() => rive && rive.pause()}
-      />
-    </div>
+    <RiveComponent
+      onMouseEnter={() => rive && rive.play()}
+      onMouseLeave={() => rive && rive.pause()}
+    />
   );
 }

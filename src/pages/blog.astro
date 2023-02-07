@@ -2,8 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import App from '../components/App.astro';
-import AppIcon from '../components/AppIcon';
+import IconFrame from '../components/IconFrame.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 // import Rive from '@rive-app/react-canvas';
@@ -26,12 +25,12 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	<body>
 		<Header />
 		<main>
-      <AppIcon client:load filename="poison-loader" />
+      
 
       <div class="main-container">
 					{
 						posts.map((post) => (
-              <App title={post.frontmatter.title} appIcon={post.frontmatter.appIcon} />
+              <IconFrame title={post.frontmatter.title} />
 						))
 					}
       </div>
