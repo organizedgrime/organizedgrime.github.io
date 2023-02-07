@@ -1,27 +1,35 @@
 ---
-import Rive from '@rive-app/react-canvas';
-import AppIcon from './AppIcon';
+import RiveComponent from './RiveComponent';
 const { title, appIcon } = Astro.props;
 ---
 <div class="container">
   <div class="icon-container">
-    <AppIcon client:load title={title} filename="poison-loader" />
+    <RiveComponent client:visible title={title} filename="poison-loader" />
   </div>
-  <p>{title}</p>
+  <span>{title}</span>
 </div>
 
-
 <style>
+  /* Main Container */
   .container {
     margin: 0 auto;
   }
 
-  /* Apple specifies a corner raidus of 80 for their 512x512 icon */
+  /* Icon-Container */
 	.icon-container {
+    /* Shape */
     width: 200px;
     height: 200px;
     border-radius: 20%;
-    background-color: #ececec;
+    /* Masking */
     overflow: hidden;
+    /* Default bg color if RIV doesn't load */
+    background-color: #ececec;
+  }
+
+  /* App Title */
+  span {
+    display: table;
+    margin: 0 auto;
   }
 </style>

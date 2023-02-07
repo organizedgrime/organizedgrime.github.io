@@ -4,26 +4,9 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-/* Register our custom font family and tell the browser where to find it. */
-@font-face {
-  font-family: 'Neue Pixel Sans';
-  src: url('/fonts/neue-pixel-sans.regular.ttf') format('tff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pixel UniCode';
-  src: url('/fonts/pixel-unicode.otf') format('otf');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Apply this font family everywhere! */
+/* Apply the Apple font family everywhere! */
 * {
-  font-family: 'Pixel UniCode', sans-serif;
+  font-family: 'SF Pro', sans-serif;
   cursor: url("/mac-cursor.ico"), default;
 }
 

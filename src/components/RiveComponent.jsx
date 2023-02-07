@@ -1,6 +1,6 @@
 import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
 
-export default function AppIcon(props) {
+export default function RiveComponent(props) {
   const { rive, RiveComponent } = useRive({
     src: '/rives/' + props.filename + '.riv',
     autoplay: false,
