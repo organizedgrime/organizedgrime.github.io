@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Ancient Sumerian Outside Academia"
+title: "Sumerian"
 description: "Learn about the Ancient Sumerian language with me"
 pubDate: "April 09 2022"
 heroImage: "/images/blog/sumerian.jpg"

@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Data Science & Astrology"
+title: "Astrology"
 description: "Using Data Science to evaluate Astrology"
 pubDate: "December 16 2022"
 heroImage: "/images/blog/datascience.jpg"

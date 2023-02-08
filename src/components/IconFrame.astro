@@ -20,13 +20,20 @@ const { title, appIcon, url } = Astro.props;
   /* Icon-Container */
 	.icon-container {
     /* Shape */
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 20%;
     /* Masking */
     overflow: hidden;
-    /* Default bg color if RIV doesn't load */
-    background-color: #ececec;
+    /* Animation */
+    transition: margin 0.5s ease-in-out;
+    transition: box-shadow 0.5s ease-in-out;
+  }
+
+  .icon-container:hover {
+    box-shadow: 0px 0px 10px rgba(0,0,0,1);
+    margin-top: -5px;
+    /* margin-left: -5px; */
   }
 
   /* App Title */
