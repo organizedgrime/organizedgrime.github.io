@@ -10,6 +10,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
+
+// Represent these in a different format
+const postApps = posts.map((post) => ({ title: post.frontmatter.title, url: post.url }));
+
+// Apps that do not correspond to actual blog posts
+const staticApps = [
+  { title: "GitHub", url: "https://github.com/organizedgrime"},
+  { title: "Twitter", url: "https://twitter.com/vera_lgbt"},
+  { title: "LinkedIn", url: "https://www.linkedin.com/in/vera-gonzalez/"},
+];
+
+// Concatenate the Post apps with the Static apps
+const allApps = postApps.concat(staticApps);
 ---
 
 <!DOCTYPE html>
@@ -22,8 +35,8 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 		<main>
       <div class="main-container">
 					{
-						posts.map((post) => (
-              <IconFrame title={post.frontmatter.title} url={post.url} />
+						allApps.map((app) => (
+              <IconFrame title={app.title} url={app.url} />
 						))
 					}
       </div>
@@ -39,23 +52,5 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
     gap: 10px;
     flex-wrap: wrap;
     margin: 20px auto 50px auto;
-  }
-/* 
-  body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-  } */
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
   }
 </style>

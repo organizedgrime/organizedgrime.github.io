@@ -7,10 +7,12 @@ export default function AppIcon(props) {
   switch (props.title) {
     case "LSystems":
       return <FamiliarSpirit />
-    case "Algorithms":
+    case "GitHub":
       return <GenericRive title={"github"} />
-    case "Mandelbrot":
+    case "Twitter":
       return <GenericRive title={"twitter"} />
+    case "LinkedIn":
+      return <GenericRive title={"linkedin"} />
     default:
       return <ExampleRive />
   }
