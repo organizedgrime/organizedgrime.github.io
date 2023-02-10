@@ -5,8 +5,19 @@ import GenericRive from "./GenericRive";
 // Given the title of the Application, render appropriate icon
 export default function AppIcon(props) {
   switch (props.title) {
-    case "LSystems":
+    // Articles
+    case "Familiar Spirit":
       return <FamiliarSpirit />
+    case "Astrology":
+      return <GenericRive title={"datascience"} />
+    case "Sumerian":
+      return <GenericRive title={"sumerian"} />
+    case "LSystems":
+      return <GenericRive title={"lsystems"} />
+    case "Mandelbrot":
+      return <img src="../images/mandelbrot.gif"/>
+        
+    // Links
     case "GitHub":
       return <GenericRive title={"github"} />
     case "Twitter":
