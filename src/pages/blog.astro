@@ -49,8 +49,14 @@ const allApps = postApps.concat(staticApps);
   .main-container {
     display: grid;
     grid-template-columns: 200px 200px 200px 200px;
-    gap: 10px;
+    column-gap: 50px;
+    row-gap: 60px;
     flex-wrap: wrap;
     margin: 20px auto 50px auto;
+  }
+
+  body {
+    background-image: url("../images/background.png");
+    background-size: contain;
   }
 </style>
