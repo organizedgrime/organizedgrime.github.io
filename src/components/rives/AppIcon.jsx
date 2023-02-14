@@ -1,6 +1,6 @@
-import ExampleRive from "./ExampleRive";
 import FamiliarSpirit from "./FamiliarSpirit";
-import GenericRive from "./GenericRive";
+import ToggleRive from "./ ToggleRive";
+import ContinuousRive from "./ContinuousRive";
 
 // Given the title of the Application, render appropriate icon
 export default function AppIcon(props) {
@@ -9,22 +9,30 @@ export default function AppIcon(props) {
     case "Familiar Spirit":
       return <FamiliarSpirit />
     case "Astrology":
-      return <GenericRive title={"datascience"} />
+      return <ContinuousRive title={"datascience"} />
     case "Sumerian":
-      return <GenericRive title={"sumerian"} />
+      return <ToggleRive title={"sumerian"} />
     case "LSystems":
-      return <GenericRive title={"lsystems"} />
+      return <ContinuousRive title={"lsystems"} />
     case "Mandelbrot":
       return <img src="../images/mandelbrot.gif"/>
-        
+    case "Eden":
+      return <img src="../images/eden.gif"/>
+    case "Astrology Math":
+      return <ContinuousRive title={"astromath"} />
+    case "About Me":
+      return <ToggleRive title={"aboutme"} />
+    case "Cryptography":
+      return <ToggleRive title={"cryptography"} />
+      
     // Links
     case "GitHub":
-      return <GenericRive title={"github"} />
+      return <ContinuousRive title={"github"} />
     case "Twitter":
-      return <GenericRive title={"twitter"} />
+      return <ContinuousRive title={"twitter"} />
     case "LinkedIn":
-      return <GenericRive title={"linkedin"} />
+      return <ContinuousRive title={"linkedin"} />
     default:
-      return <ExampleRive />
+      return <ContinuousRive title={"poison-loader"} />
   }
 }
