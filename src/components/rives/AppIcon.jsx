@@ -9,17 +9,17 @@ export default function AppIcon(props) {
     case "Familiar Spirit":
       return <FamiliarSpirit />
     case "Astrology":
-      return <ContinuousRive title={"datascience"} />
+      return <ToggleRive title={"datascience"} />
     case "Sumerian":
       return <ToggleRive title={"sumerian"} />
     case "LSystems":
-      return <ContinuousRive title={"lsystems"} />
+      return <ToggleRive title={"lsystems"} />
     case "Mandelbrot":
       return <img src="../images/mandelbrot.gif"/>
     case "Eden":
       return <img src="../images/eden.gif"/>
     case "Astrology Math":
-      return <ContinuousRive title={"astromath"} />
+      return <ToggleRive title={"astromath"} />
     case "About Me":
       return <ToggleRive title={"aboutme"} />
     case "Cryptography":
@@ -27,11 +27,11 @@ export default function AppIcon(props) {
       
     // Links
     case "GitHub":
-      return <ContinuousRive title={"github"} />
+      return <ToggleRive title={"github"} />
     case "Twitter":
-      return <ContinuousRive title={"twitter"} />
+      return <ToggleRive title={"twitter"} />
     case "LinkedIn":
-      return <ContinuousRive title={"linkedin"} />
+      return <ToggleRive title={"linkedin"} />
     default:
       return <ContinuousRive title={"poison-loader"} />
   }
