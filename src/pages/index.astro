@@ -34,14 +34,14 @@ const staticApps = [
                 <div id="apps">
                     {
                         postApps.map((app) => (
-                            <IconFrame title={app.title} url={app.url} />
+                            <IconFrame title={app.title} url={app.url} showText={true} />
                         ))
                     }
                 </div>
                 <div id="home">
                     {
                         staticApps.map((app) => (
-                            <IconFrame title={app.title} url={app.url} />
+                            <IconFrame title={app.title} url={app.url} showText={true} />
                         ))
                     }
                 </div>
@@ -60,15 +60,13 @@ const staticApps = [
 
     #apps {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        column-gap: 30px;
-        row-gap: 30px;
     }
 
     #home {
         display: inline-flex;
-        justify-content: center;
+    }
+
+    #home, #apps {
         flex-wrap: wrap;
         column-gap: 30px;
         row-gap: 30px;

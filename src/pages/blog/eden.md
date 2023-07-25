@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Eden"
 description: "Generative plant model"
 pubDate: "November 08 2019"
-heroImage: "/images/blog/eden.jpg"
+headerColor: "rgb(24 121 78)"
 ---
 When looking out on the world, there is no shortage of beauty. Nature is the greatest artist, and the physical world is her medium. This said, the glimpses we gain into her artistic process are few and far between. Some approach the question through biology, physics, or chemistry, but the avenue I chose for this project was that of mathematics. It was through mathematics that I sought to answer one question:
 

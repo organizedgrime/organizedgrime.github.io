@@ -71,14 +71,8 @@ pre {
   }
 }
 
-a,
-a:visited {
-  color: #01ff70;
-}
 
-a:hover,
-a:focus,
-a:active {
+a {
   color: #2ecc40;
 }
 

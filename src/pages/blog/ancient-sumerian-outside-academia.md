@@ -3,8 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Sumerian"
 description: "Learn about the Ancient Sumerian language with me"
 pubDate: "April 09 2022"
-heroImage: "/images/blog/sumerian.jpg"
-appIcon: "/images/blog/sumerian.jpg"
+headerColor: "#F69F6C"
 ---
 There are many areas of interest that for most of modern history, have been exclusive to the select few that were simply rich and bored enough to study them. The advent of the internet, along with changes in attitudes on learning in younger peoples, is slowly starting to dissolve those barriers. 
 After learning that the [Ancient Sumerian Language](https://en.wikipedia.org/wiki/Sumerian_language) is the oldest written language we know of, unrelated to any other known language, I immediately became entranced not only by its grammatical and syntactical structure, but equally by the culture that spawned it.
@@ -17,4 +16,4 @@ The second component of my learning was to visualize the structure of the langua
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="550" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F7lZ6Wfp5jPwWxSgMOKyw8I%2FSumerian-Grammar-Diagram%3Fnode-id%3D3%253A19" allowfullscreen></iframe>
 
-This grammar tree has now informed many of the interpretations I’ve done on Sumerian texts, as well as enabled me to encode my own sentences into Sumerian for use in [my ceramic projects](https://vera.lgbt/ceramics).
+This grammar tree has now informed many of the interpretations I’ve done on Sumerian texts, as well as enabled me to encode my own sentences into Sumerian for use in my ceramic projects.

@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Astrology"
 description: "Using Data Science to evaluate Astrology"
 pubDate: "December 16 2022"
-heroImage: "/images/blog/datascience.jpg"
+headerColor: "#000"
 ---
 # Introduction and Project Purpose
 It is through this project I wish to answer a seemingly simple question: 

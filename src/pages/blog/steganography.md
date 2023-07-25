@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Steganography"
 description: "Hiding secret messages in images"
 pubDate: "February 20 2017"
-heroImage: "/images/blog/steganography.jpg"
+headerColor: "rgb(24 121 78)"
 ---
 When I first learned of [Steganography](https://en.wikipedia.org/wiki/Steganography), I immediately became entranced by the concept. The study principally concerns itself with hiding one message within another, a sort of matryoshka doll of information. Rather than Cryptography, which concerns itself with a scientific approach to *guaranteeing* security, Steganography seeks to hide information in plain sight, relying on the ignorance of the 3rd party rather than any provable notions of security. Having grown up in a culture which on some level mythologizes a deep understanding of computers, I saw this not only as an opportunity to learn about the subject, but also to get one inch closer to that hacker I saw on TV.
 

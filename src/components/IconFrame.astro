@@ -1,13 +1,15 @@
 ---
 import AppIcon from './rives/AppIcon';
-const { title, appIcon, url } = Astro.props;
+const { title, url, showText } = Astro.props;
+const text = showText ? title : "";
 ---
 <div class="container">
   <a href={url}>
     <div class="icon-container">
         <AppIcon title={title} client:visible />
     </div>
-    <span>{title}</span>
+    
+    <span>{text}</span>
   </a>
 </div>
 
