@@ -194,6 +194,34 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "creations": {
+"ceramics/index.md": {
+	id: "ceramics/index.md";
+  slug: "ceramics";
+  body: string;
+  collection: "creations";
+  data: InferEntrySchema<"creations">
+} & { render(): Render[".md"] };
+"computer-science/index.md": {
+	id: "computer-science/index.md";
+  slug: "computer-science";
+  body: string;
+  collection: "creations";
+  data: InferEntrySchema<"creations">
+} & { render(): Render[".md"] };
+"linguistics/index.md": {
+	id: "linguistics/index.md";
+  slug: "linguistics";
+  body: string;
+  collection: "creations";
+  data: InferEntrySchema<"creations">
+} & { render(): Render[".md"] };
+"origami/index.md": {
+	id: "origami/index.md";
+  slug: "origami";
+  body: string;
+  collection: "creations";
+  data: InferEntrySchema<"creations">
+} & { render(): Render[".md"] };
 "project-1/index.md": {
 	id: "project-1/index.md";
   slug: "project-1";
@@ -204,6 +232,20 @@ declare module 'astro:content' {
 "project-2/index.md": {
 	id: "project-2/index.md";
   slug: "project-2";
+  body: string;
+  collection: "creations";
+  data: InferEntrySchema<"creations">
+} & { render(): Render[".md"] };
+"shibari/index.md": {
+	id: "shibari/index.md";
+  slug: "shibari";
+  body: string;
+  collection: "creations";
+  data: InferEntrySchema<"creations">
+} & { render(): Render[".md"] };
+"software/index.md": {
+	id: "software/index.md";
+  slug: "software";
   body: string;
   collection: "creations";
   data: InferEntrySchema<"creations">
