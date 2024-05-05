@@ -1,15 +1,15 @@
 ---
-title: "Projects Collection"
+title: "Creations Collection"
 description: "How to add projects to your portfolio."
 date: "Mar 20 2024"
 ---
 
-The `projects` collections is found in `src/content/projects`.
+The `creations` collections is found in `src/content/creations`.
 
 Working with the `projects` collection:
 
 ```
-📁 /src/content/projects
+📁 /src/content/creations
 └── 📁 project-1
       └── 📄 index.md
 └── 📁 projects-2

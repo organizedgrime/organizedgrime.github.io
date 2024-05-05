@@ -1,6 +1,6 @@
 ---
-title: "Astro Nano"
-description: "Minimal portfolio and blog build with astro and no frameworks."
+title: "vera.lgbt"
+description: ""
 date: "Mar 26 2024"
 demoURL: "https://astro-nano-demo.vercel.app"
 repoURL: "https://github.com/markhorn-dev/astro-nano"

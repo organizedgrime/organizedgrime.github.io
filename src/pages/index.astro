@@ -12,10 +12,10 @@ const blog = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0,SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
+const creations = (await getCollection("creations"))
+  .filter(creation => !creation.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .slice(0,SITE.NUM_CREATIONS_ON_HOMEPAGE);
 
 const allwork = (await getCollection("work"))
   .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
@@ -39,13 +39,7 @@ const work = await Promise.all(
       <section>
         <article class="space-y-4">
           <p class="animate">
-            I am a minimal, seo friendly, accessible portfolio and blog for developers. 󰄛
-            I am an even more lightweight version of my popular theme
-            <Link href="https://github.com/markhorn-dev/astro-sphere" aria-label="Astro Sphere on Github" external>
-              Astro Sphere
-            </Link>.
-            I have a lighthouse scores of 100 across the board for performance, 
-            accesibility, best practices and SEO.
+            I love to create, to solve challenging problems, and to blend and overlap my interests with one another. 
           </p>
           <p class="animate">
             I come packed with full type safety, a sitemap, an rss feed, markdown 
@@ -113,16 +107,16 @@ const work = await Promise.all(
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
+            Recent creations
           </h5>
-          <Link href="/projects">
-            See all projects
+          <Link href="/creations">
+            See all creations
           </Link>
         </div>
         <ul class="flex flex-col gap-4">
-          {projects.map(project => (
+          {creations.map(creation => (
             <li>
-              <ArrowCard entry={project} />
+              <ArrowCard entry={creation} />
             </li>
           ))}
         </ul>

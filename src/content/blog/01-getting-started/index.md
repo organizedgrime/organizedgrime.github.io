@@ -18,7 +18,7 @@ export const SITE: Site = {
   EMAIL: "markhorn.dev@gmail.com",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
-  NUM_PROJECTS_ON_HOMEPAGE: 3,
+  NUM_CREATIONS_ON_HOMEPAGE: 3,
 };
 ```
 
@@ -28,7 +28,7 @@ export const SITE: Site = {
 | EMAIL | Yes | Displayed in contact section. |
 | NUM_POSTS | Yes | Limit num of posts on home page. |
 | NUM_WORKS | Yes | Limit num of works on home page. |
-| NUM_PROJECTS | Yes | Limit num of projects on home page. |
+| NUM_CREATIONS | Yes | Limit num of projects on home page. |
 
 Customize your page metadata
 
