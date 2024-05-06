@@ -1,0 +1,64 @@
+---
+title: "Shibari"
+description: "The beauty of tight binding."
+date: "Mar 18 2024"
+---
+import { Picture } from 'astro:assets';
+import cat1 from './cat1.jpg';
+import cat2 from './cat2.jpg';
+
+import dog1 from './dog1.jpg';
+import dog2 from './dog2.jpg';
+import dog3 from './dog3.jpg';
+import dog4 from './dog4.jpg';
+import dog5 from './dog5.jpg';
+
+import self1 from './self1.jpg';
+import self2 from './self2.jpg';
+import self3 from './self3.jpg';
+
+import s1 from './s1.jpg';
+import s2 from './s2.jpg';
+import s3 from './s3.jpg';
+import s4 from './s4.jpg';
+import s5 from './s5.jpg';
+import s6 from './s6.jpg';
+import s7 from './s7.jpg';
+export const images = [
+	self1, self2, self3,
+	cat1, cat2,
+	dog1, dog2, dog3, dog4, dog5,
+	s1, s2, s3, s4, s5, s6, s7
+];
+
+I've been practicing shibari for a few years. I find it to be a beautiful expression of connection and vulnerability, deeply meditative, and profoundly transformative. I owe great thanks to the groups that have made shibari education more accessible through the internet.
+
+These are some of the ties I'm most proud of.
+
+<br/>
+---
+<br/>
+
+{
+  images.map((image) => (
+	<Picture src={image} alt="none"/>
+  ))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

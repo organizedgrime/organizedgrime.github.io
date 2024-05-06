@@ -1,0 +1,44 @@
+---
+title: "Origami"
+description: "Elegant folds."
+date: "Mar 18 2024"
+---
+import { Picture } from 'astro:assets';
+
+import trans1 from './trans1.jpg';
+import trans2 from './trans2.jpg';
+
+import moth1 from './moth1.jpg';
+import moth2 from './moth2.jpg';
+
+import spike1 from './spike1.jpg';
+import spike2 from './spike2.jpg';
+import spike3 from './spike3.jpg';
+import spike4 from './spike4.jpg';
+
+import fuse1 from './fuse1.png';
+import fuse2 from './fuse2.jpg';
+
+export const images = [
+	trans1, trans2,
+	moth1, moth2,
+	spike1, spike2, spike3, spike4,
+	fuse1, fuse2,
+];
+
+Origami has brought me great solace during times of stress. The repetitive folds of modular origami in particular provide me sanctuary from the mundane and allow me to enter a flow state. Simultaneously, I can use them to explore my ever growing love of Polyhedra! Truly, a delight.
+
+<br/>
+---
+<br/>
+
+{
+  images.map((image) => (
+	<Picture src={image} alt="none"/>
+  ))
+}
+
+
+
+
+
