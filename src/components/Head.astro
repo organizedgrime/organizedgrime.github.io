@@ -7,23 +7,13 @@ import { AstroFont } from "astro-font";
 interface Props {
   title: string;
   description: string;
-  redirect?: string;
   image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, redirect, image = "/nano.png" } = Astro.props;
+const { title, description, image = "/nano.png" } = Astro.props;
 ---
-
-<!-- redirects -->
-{redirect ? (
-  <meta 
-    http-equiv="refresh" 
-    content={ `0; url=${ redirect }` } 
-  />
-) : null}
-
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -39,7 +29,6 @@ const { title, description, redirect, image = "/nano.png" } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="redirect" content={redirect} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

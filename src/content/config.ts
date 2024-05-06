@@ -27,7 +27,6 @@ const creations = defineCollection({
         description: z.string(),
         date: z.coerce.date(),
         draft: z.boolean().optional(),
-        redirect: z.string().optional(),
         demoURL: z.string().optional(),
         repoURL: z.string().optional()
     }),

@@ -22,7 +22,7 @@ const creation = Astro.props;
 const { Content } = await creation.render();
 ---
 
-<PageLayout title={creation.data.title} description={creation.data.description} redirect={creation.data.redirect}>
+<PageLayout title={creation.data.title} description={creation.data.description}>
   <Container>
     <div class="animate">
       <BackToPrev href="/creations">
