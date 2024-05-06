@@ -9,7 +9,7 @@ import Link from "@components/Link.astro";
 
 export async function getStaticPaths() {
   const poems = (await getCollection("poems"))
-    .filter(post => !post.data.draft)
+    .filter(poem => !poem.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return poems.map((poem) => ({
     params: { slug: poem.slug },
@@ -32,7 +32,7 @@ const { Content } = await poem.render();
     <div class="space-y-1 my-10">
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
-          <!-- <FormattedDate date={poem.data.date} /> -->
+          <FormattedDate date={poem.data.date} />
         </div>
         &bull;
         <div class="font-base text-sm">
@@ -42,23 +42,6 @@ const { Content } = await poem.render();
       <div class="animate text-2xl font-semibold text-black dark:text-white">
         {poem.data.title}
       </div>
-      {(poem.data.demoURL || poem.data.repoURL) && (
-        <nav class="animate flex gap-1">
-          {poem.data.demoURL && (
-            <Link href={poem.data.demoURL} external>
-              demo
-            </Link>
-          )}
-          {poem.data.demoURL && poem.data.repoURL && (
-            <span>/</span>
-          )}
-          {poem.data.repoURL && (
-            <Link href={poem.data.repoURL} external>
-              repo
-            </Link>
-          )}
-        </nav>
-      )}
     </div>
     <article class="animate">
       <Content />

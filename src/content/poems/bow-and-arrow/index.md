@@ -1,0 +1,49 @@
+---
+title: "bow & arrow"
+date: "April 25 2023"
+---
+![image.png](./image.png)
+
+you pull the bow taught, because i want you to.
+
+we lock eyes, and you do not avert my gaze.
+
+there is an understanding, an agreement;
+
+we both know what is happening, and it is dangerous.
+
+for ten kalpa i have taken no risks, and so am reborn instantly. it’s not until i inhale that i realize how long i have been holding my breath. shocked by my lung capacity, i keep breathing.
+
+as oxygen floods my mind, i lean back with my full weight. 
+
+i am yours.
+
+you even say so yourself. 
+
+my eyes glisten, dodecahedra rotate in my pupils. you seem puzzled by my amazement, because you fail to realize your own incredible worth.
+
+i thank my gods for giving me a glimpse of your soul. 
+
+i thank you for the myriad ways this glimpse change me.
+
+but now your fingers are fraying,
+
+unbinding themselves from your bowstring, from my heartstring.
+
+choosing not to play, you release your grasp, proclaiming that you are no virtuoso. 
+
+unable to claim every note as perfect, i have no rebuttal, but we’re only just beginning our song. 
+
+how could its mere overture ever satiate, when we knew what was to come? 
+
+those chords will never be played, and now you avert my gaze.
+
+did you ever agree to our agreement?
+
+all four winds are knocked out of me,
+
+and i now refuse to breathe for ten kalpa more. 
+
+maybe one day ill find a responsible archer.
+
+i truly wish it had been you.
