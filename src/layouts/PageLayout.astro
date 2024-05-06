@@ -7,15 +7,16 @@ import { SITE } from "@consts";
 type Props = {
   title: string;
   description: string;
+  redirect?: string;
 };
 
-const { title, description } = Astro.props;
+const { title, description, redirect } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={`${title} | ${SITE.NAME}`} description={description} />
+    <Head title={`${title} | ${SITE.NAME}`} description={description} redirect={redirect} />
   </head>
   <body>
     <Header />

@@ -22,7 +22,7 @@ const creation = Astro.props;
 const { Content } = await creation.render();
 ---
 
-<PageLayout title={creation.data.title} description={creation.data.description}>
+<PageLayout title={creation.data.title} description={creation.data.description} redirect={creation.data.redirect}>
   <Container>
     <div class="animate">
       <BackToPrev href="/creations">
@@ -33,6 +33,7 @@ const { Content } = await creation.render();
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
           <FormattedDate date={creation.data.date} />
+		{JSON.stringify(creation.data)}
         </div>
         &bull;
         <div class="font-base text-sm">

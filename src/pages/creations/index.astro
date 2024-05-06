@@ -13,12 +13,6 @@ import { CREATIONS } from "@consts";
 const creations = (await getCollection("creations"))
   .filter(creation => !creation.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-
-const poems = (await getCollection("poems"))
-  .filter(poem => !poem.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_POEMS_ON_CREATIONS_PAGE);
-
 ---
 
 <PageLayout title={CREATIONS.TITLE} description={CREATIONS.DESCRIPTION}>
@@ -36,24 +30,5 @@ const poems = (await getCollection("poems"))
           ))
         }
       </ul>
-    </section>
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent poems
-          </h5>
-          <Link href="/content/poems">
-            See all poems
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {poems.map(poem => (
-            <li>
-              <ArrowCard entry={poem} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
   </Container>
 </PageLayout>
