@@ -15,7 +15,7 @@ const { entry } = Astro.props;
       {entry.data.title}
     </div>
     <div class="text-sm">
-      { !entry.data.description ? <FormattedDate date={entry.data.date} /> : entry.data.description }
+      { !entry.data.description ? <FormattedDate date={entry.data.date} no_year={true} /> : entry.data.description }
     </div>
   </div>
   <svg 

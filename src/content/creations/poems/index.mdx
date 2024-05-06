@@ -1,0 +1,20 @@
+---
+title: "Poems"
+description: "Big words."
+date: "Mar 1 2024"
+---
+import { getCollection } from "astro:content";
+import YearLayout from "@layouts/YearLayout.astro";
+import { POEMS } from "@consts";
+
+At some point I started writing poetry. It is raw and it is born of some of my more difficult experiences as a human being.
+
+<br/>
+---
+<br/>
+
+<YearLayout title={POEMS.TITLE} description={POEMS.DESCRIPTION} collection={"poems"}>
+</YearLayout>
+
+
+
