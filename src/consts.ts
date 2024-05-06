@@ -28,6 +28,12 @@ export const CREATIONS: Metadata = {
     DESCRIPTION: "A collection of my creations, with links to repositories and demos.",
 };
 
+export const LINGUISTICS: Metadata = {
+    TITLE: "Linguistics",
+    DESCRIPTION: "Collection of language study.",
+};
+
+
 export const POEMS: Metadata = {
     TITLE: "Poem",
     DESCRIPTION: "A collection of my poems, with links to repositories and demos.",

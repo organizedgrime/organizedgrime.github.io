@@ -32,6 +32,16 @@ const creations = defineCollection({
     }),
 });
 
+const linguistics = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        date: z.coerce.date(),
+        draft: z.boolean().optional(),
+    }),
+});
+
+
 const poems = defineCollection({
     type: "content",
     schema: z.object({
@@ -41,4 +51,4 @@ const poems = defineCollection({
     }),
 });
 
-export const collections = { blog, work, creations, poems };
+export const collections = { blog, work, creations, poems, linguistics };

@@ -3,15 +3,12 @@ import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
-import { POEMS } from "@consts";
 
 type Props = {
-    title: string;
-    description: string;
     collection: string;
 }
 
-const { description, collection } = Astro.props;
+const { collection } = Astro.props;
 
 const data = (await getCollection(collection))
   .filter(poem => !poem.data.draft)
