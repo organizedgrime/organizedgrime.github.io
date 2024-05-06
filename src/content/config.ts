@@ -27,8 +27,27 @@ const creations = defineCollection({
         description: z.string(),
         date: z.coerce.date(),
         draft: z.boolean().optional(),
+    }),
+});
+
+const software = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        date: z.coerce.date(),
+        draft: z.boolean().optional(),
         demoURL: z.string().optional(),
         repoURL: z.string().optional()
+    }),
+});
+
+
+const math = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        date: z.coerce.date(),
+        draft: z.boolean().optional(),
     }),
 });
 
@@ -51,4 +70,4 @@ const poems = defineCollection({
     }),
 });
 
-export const collections = { blog, work, creations, poems, linguistics };
+export const collections = { blog, work, creations, poems, math, software, linguistics };

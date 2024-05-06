@@ -33,6 +33,11 @@ export const LINGUISTICS: Metadata = {
     DESCRIPTION: "Collection of language study.",
 };
 
+export const MATHS: Metadata = {
+    TITLE: "Math",
+    DESCRIPTION: "A collection of my poems, with links to repositories and demos.",
+};
+
 
 export const POEMS: Metadata = {
     TITLE: "Poem",
