@@ -16,9 +16,7 @@
 
 <div>
 	<div class="title">
-		<div class="title-container">
-			<slot name="title">TITLE</slot>
-		</div>
+		<slot name="title">TITLE</slot>
 	</div>
 	<div class="content" style="display:none">
 		<slot name="content">CONTENT</slot>
@@ -38,7 +36,7 @@
 	//var title = $('.title').find(titleSelector).html();
 	//console.log("title mew: " + title);
 	//$('.title').find(titleSelector).html("-> " + title);
-	$('.title').find(titleSelector).prepend("-> ");
+	$('.title').find(titleSelector).prepend(right + "&emsp;");
 
 
 	//$('.title').children().children('h3').html("<span>&emsp;</span>" + title)
