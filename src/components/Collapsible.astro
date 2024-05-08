@@ -3,13 +3,12 @@
 ---
 
 <style>
-.collapsible {
+.title {
   cursor: pointer;
-  border: none;
-  outline: none;
+  outline: 1px;
 }
 
-.active, .collapsible:hover {
+.active, .title:hover {
   background-color: #555;
 }
 </style>
@@ -26,20 +25,16 @@
 
 <script>
 	var titleSelector = 'h1, h2, h3, h4, h5, h6';
-	var right = "";
-	var down = "";
-
+	var right = '';
+	var down = '';
+	var indicator = '<span class="indicator">' + right + '</span>';
+	$('.title').find(titleSelector).prepend(indicator + '&emsp;');
+	$('.title').data('hidden', true);
 	$('.title').click(function(){
-		$(this).siblings('.content').toggle();
+		var hidden = !$(this).data('hidden');
+		$(this).data('hidden', hidden);
+		$(this).find('.indicator').html(hidden ? right : down);
+		$(this).siblings('.content').slideToggle('slow');
 	});
-
-	//var title = $('.title').find(titleSelector).html();
-	//console.log("title mew: " + title);
-	//$('.title').find(titleSelector).html("-> " + title);
-	$('.title').find(titleSelector).prepend(right + "&emsp;");
-
-
-	//$('.title').children().children('h3').html("<span>&emsp;</span>" + title)
-	//$('.title').css('color', color);
 </script>
 
