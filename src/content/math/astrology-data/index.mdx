@@ -13,6 +13,7 @@ import Blue from "@components/colors/Blue.astro";
 import Purple from "@components/colors/Purple.astro";
 import Pink from "@components/colors/Pink.astro";
 import Collapsible from "@components/Collapsible.astro";
+import Divider from "@components/Collapsible.astro";
 
 I love you $E=mc^2$ omg
 
@@ -26,14 +27,18 @@ No prior knowledge of Astronomy is assumed, so this article is very verbose. I e
 <br/>
 Great inspiration in diagramming has been pulled from The Elements of House Division by Ralph William Holden, a masterful work of Astrology math that has been largely forgotten by contemporary Astrologers. I was only able to read it by visiting the Library of Congress, but it clarified some of the higher complexity <Pink>House Division</Pink> mathematics. The Astrological community owes him a great debt for preserving this knowledge.
 
-<br/>
----
-<br/>
-
+<Divider/>
 
 <Collapsible>
-    <Red slot="title">Meow</Red>
-    <Blue slot="content">Meow</Blue>
+    <h2 slot="title"><Red>Fundamental Building Blocks</Red></h2>
+    <div slot="content">
+        This section will provide concepts that are essential to a complete understanding of all subsequent sections. Do not skip these concepts if you have any plans to implement Astrology Math in a codebase of your own. 
+        <Divider/>
+        <Collapsible>
+            <h3 slot="title"><Red>Angle Measurement</Red></h3>
+            <p slot="content">Wow i love angles!</p>
+        </Collapsible>
+    </div>
 </Collapsible>
 
 
