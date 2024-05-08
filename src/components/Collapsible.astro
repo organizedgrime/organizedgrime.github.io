@@ -15,8 +15,10 @@
 </style>
 
 <div>
-	<div class="collapsible">
-		<span>&emsp;</span><slot name="title">TITLE</slot>
+	<div class="title">
+		<div class="title-container">
+			<slot name="title">TITLE</slot>
+		</div>
 	</div>
 	<div class="content" style="display:none">
 		<slot name="content">CONTENT</slot>
@@ -25,8 +27,21 @@
 
 
 <script>
-	$('.collapsible').click(function(){
+	var titleSelector = 'h1, h2, h3, h4, h5, h6';
+	var right = "";
+	var down = "";
+
+	$('.title').click(function(){
 		$(this).siblings('.content').toggle();
 	});
+
+	//var title = $('.title').find(titleSelector).html();
+	//console.log("title mew: " + title);
+	//$('.title').find(titleSelector).html("-> " + title);
+	$('.title').find(titleSelector).prepend("-> ");
+
+
+	//$('.title').children().children('h3').html("<span>&emsp;</span>" + title)
+	//$('.title').css('color', color);
 </script>
 
