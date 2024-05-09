@@ -36,6 +36,7 @@
 	var indicator = '<span class="indicator">' + right + '</span>';
 	$('.title').find(titleSelector).prepend(indicator + '&emsp;');
 	$('.title').data('hidden', true);
+	$('.title').siblings('.content').slideToggle('slow');
 	$('.title').click(function(){
 		var hidden = !$(this).data('hidden');
 		$(this).data('hidden', hidden);

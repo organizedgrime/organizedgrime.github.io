@@ -34,6 +34,50 @@ Great inspiration in diagramming has been pulled from The Elements of House Divi
         This section will provide concepts that are essential to a complete understanding of all subsequent sections. Do not skip these concepts if you have any plans to implement Astrology Math in a codebase of your own.
         <Collapsible>
             <Red slot="title"><h5>AstroAngle</h5></Red>
+            <div slot="content">
+                Let us define an <Red>AstroAngle</Red> as an angle that is represented internally in one of the following forms. 
+                <Collapsible>
+                    <Red slot="title"><h6>$\rm degrees$</h6></Red>
+                    <div slot="content">
+                        Familiar to anyone who has taken Geometry, <Red>$\rm degrees$</Red> divide the circle into $360$ even components. A <Red>$\rm degree$</Red> is denoted using the <Red>$\degree$</Red> symbol. The result is a system that lends itself to highly intuitive angle math, an innovation that we can thank the Sumerians for.
+                        <br/>
+                        A '<Red>$\rm minute$</Red>' is $\frac{1}{60} th$ of a <Red>$\rm degree$</Red>. It is denoted using the <Red>'</Red> symbol.
+                        <br/>
+                        A '<Red>$\rm second$</Red>' is $\frac{1}{60} th$ of a <Red>$\rm minute$</Red>. It is denoted using the <Red>''</Red> symbol.
+                        <br/>
+                        <Red>Degree</Red>-based <Red>AstroAngles</Red> can be initialized in the form <Red>$\mathrm{AstroAngle(degrees}: x)$</Red> or the form <Red>$\mathrm{AstroAngle(degrees}: x, \mathrm{minutes}: y, \mathrm{seconds}: z)$</Red>.
+                    </div>
+                </Collapsible>
+                <Collapsible>
+                    <Red slot="title"><h6>$\rm hours$</h6></Red>
+                    <div slot="content">
+                        Unlike <Red>$\rm degrees$</Red>, <Red>$\rm hours$</Red> divide the circle into $24$ even components. An <Red>$\rm hour$</Red> is denoted using the symbol <Red>$\rm h$</Red>. The result is that <Red>$\rm 1h = 15\degree$</Red>. While less common than <Red>$\rm degrees$</Red>, it is still used widely in Astronomy by convention.
+                        <br/>
+                        A '<Red>$\rm minute$</Red>' is $\frac{1}{60} th$ of an <Red>$\rm hour$</Red>. It is denoted using the <Red>$m$</Red> symbol.
+                        <br/>
+                        A '<Red>$\rm second$</Red>' is $\frac{1}{60} th$ of an <Red>$\rm minute$</Red>. It is denoted using the <Red>$s$</Red> symbol.
+                    </div>
+                </Collapsible>
+                Note that traditionally, we do not employ radians in our computations. If you are attempting to implement this math in software, that might change, but fundamentally you must also be able to work with these value forms.
+                <br/>
+                Let us also define a method <Red>$\rm bound$</Red> which will modify a given value to keep it within the expected range of an <Red>AstroAngle</Red>. While extremely simple, this method is also extremely useful in performing Astronomy math.
+                <br/>
+                <Collapsible>
+                    <Red slot="title"><h6>$\mathrm{bound}(\theta)$</h6></Red>
+                    <div slot="content">
+                        $$
+                            \begin{aligned}
+                            \algorithm{1}{Bound} \\
+                            \theta \gets \{AstroAngle\} \\
+                            \while{\theta \lt 360\degree} \\
+                            \theta \gets \theta + 360\degree \\
+                            \while{\theta \gt 360\degree} \\
+                            \theta \gets \theta - 360\degree \\
+                            \end{aligned}
+                        $$
+                    </div>
+                </Collapsible>
+            </div>
         </Collapsible>
         <Collapsible>
             <Red slot="title"><h5>Great Circles & Normal Vectors</h5></Red>
