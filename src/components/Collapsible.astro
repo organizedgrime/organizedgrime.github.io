@@ -3,17 +3,24 @@
 ---
 
 <style>
+.container {
+	border: 2px solid black;
+	border-radius: 8px;
+	margin:0.5em auto;
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+}
+
 .title {
   cursor: pointer;
-  outline: 1px;
 }
 
 .active, .title:hover {
-  background-color: #555;
+  background-color: #222;
 }
 </style>
 
-<div>
+<div class="container">
 	<div class="title">
 		<slot name="title">TITLE</slot>
 	</div>
@@ -21,7 +28,6 @@
 		<slot name="content">CONTENT</slot>
 	</div>
 </div>
-
 
 <script>
 	var titleSelector = 'h1, h2, h3, h4, h5, h6';
@@ -35,6 +41,9 @@
 		$(this).data('hidden', hidden);
 		$(this).find('.indicator').html(hidden ? right : down);
 		$(this).siblings('.content').slideToggle('slow');
+	});
+	$('.container').css('border', function(){
+		return '2px solid ' + $(this).find('.indicator').css('color');
 	});
 </script>
 
