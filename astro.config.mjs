@@ -8,10 +8,10 @@ import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://astro-nano-demo.vercel.app",
-    integrations: [mdx(), sitemap(), tailwind()],
-    markdown: {
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex]
-    }
+	site: "https://astro-nano-demo.vercel.app",
+	integrations: [mdx(), sitemap(), tailwind()],
+	markdown: {
+		remarkPlugins: [remarkMath],
+		rehypePlugins: [rehypeKatex]
+	}
 });
