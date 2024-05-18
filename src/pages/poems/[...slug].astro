@@ -21,7 +21,7 @@ const poem = Astro.props;
 const { Content } = await poem.render();
 ---
 
-<PageLayout title={poem.data.title} description={poem.data.description}>
+<PageLayout title={poem.data.title} description="">
   <Container>
     <div class="animate">
       <BackToPrev href="/creations/poems">

@@ -5,7 +5,6 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
-import Link from "@components/Link.astro";
 
 export async function getStaticPaths() {
   const creations = (await getCollection("creations"))
@@ -42,23 +41,6 @@ const { Content } = await creation.render();
       <div class="animate text-2xl font-semibold text-black dark:text-white">
         {creation.data.title}
       </div>
-      {(creation.data.demoURL || creation.data.repoURL) && (
-        <nav class="animate flex gap-1">
-          {creation.data.demoURL && (
-            <Link href={creation.data.demoURL} external>
-              demo
-            </Link>
-          )}
-          {creation.data.demoURL && creation.data.repoURL && (
-            <span>/</span>
-          )}
-          {creation.data.repoURL && (
-            <Link href={creation.data.repoURL} external>
-              repo
-            </Link>
-          )}
-        </nav>
-      )}
     </div>
     <article class="animate">
       <Content />
