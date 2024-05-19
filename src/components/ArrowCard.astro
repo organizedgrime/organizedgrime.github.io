@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 
 type Props = {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"creations">;
+  entry: CollectionEntry<"blog"> | CollectionEntry<"creations"> | CollectionEntry<"math"> | CollectionEntry<"poems"> | CollectionEntry<"software"> | CollectionEntry<"linguistics">;
 }
 
 const { entry } = Astro.props;
