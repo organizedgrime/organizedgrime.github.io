@@ -30,10 +30,8 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
     <div class="space-y-10">
       <div class="animate font-semibold text-black dark:text-white">
         Poems
-        <p>
-At some point I started writing poetry. It is raw and it is born of some of my more difficult experiences as a human being.
-        </p>
       </div>
+      <p>At some point I started writing poetry.<br/>I even like some of it.</p>
       <div class="space-y-4">
         {years.map(year => (
           <section class="animate space-y-4">
