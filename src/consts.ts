@@ -13,11 +13,6 @@ export const HOME: Metadata = {
     DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
 };
 
-export const BLOG: Metadata = {
-    TITLE: "Blog",
-    DESCRIPTION: "A collection of articles on topics I am passionate about.",
-};
-
 export const WORK: Metadata = {
     TITLE: "Work",
     DESCRIPTION: "Where I have worked and what I have done.",
@@ -28,20 +23,24 @@ export const CREATIONS: Metadata = {
     DESCRIPTION: "A collection of my creations, with links to repositories and demos.",
 };
 
+export const SOFTWARE: Metadata = {
+    TITLE: "Software",
+    DESCRIPTION: "Dirty talking with silicon.",
+};
+
 export const LINGUISTICS: Metadata = {
     TITLE: "Linguistics",
     DESCRIPTION: "Collection of language study.",
 };
 
 export const MATHS: Metadata = {
-    TITLE: "Math",
-    DESCRIPTION: "A collection of my poems, with links to repositories and demos.",
-};
-
+    TITLE: "Math & Science",
+    DESCRIPTION: "Sometimes I think really hard.",
+}
 
 export const POEMS: Metadata = {
     TITLE: "Poem",
-    DESCRIPTION: "A collection of my poems, with links to repositories and demos.",
+    DESCRIPTION: "At some point I started writing poetry.<br/> I even like some of it.",
 };
 
 
