@@ -9,7 +9,7 @@ import { KatexOptions } from 'katex';
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://astro-nano-demo.vercel.app",
+	site: "https://vera.lgbt",
 	integrations: [mdx(), sitemap(), tailwind()],
 	markdown: {
 		remarkPlugins: [remarkMath],
