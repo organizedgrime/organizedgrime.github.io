@@ -40,6 +40,7 @@ const math = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		date: z.coerce.date(),
+		pdf: z.string().optional(),
 		draft: z.boolean().optional(),
 	}),
 });

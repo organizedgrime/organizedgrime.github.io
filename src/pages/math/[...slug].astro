@@ -21,7 +21,7 @@ const math = Astro.props;
 const { Content } = await math.render();
 ---
 
-<PageLayout title={math.data.title} description={math.data.description}>
+<PageLayout title={math.data.title} description={math.data.description} pdf={math.data.pdf}>
   <Container>
     <div class="animate">
       <BackToPrev href="/creations/math">
