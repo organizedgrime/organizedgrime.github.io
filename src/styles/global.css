@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.dataframe table {
+  border-width: 5px;
+}
+
+.dataframe tbody tr th:only-of-type {
+    vertical-align: middle;
+}
+
+.dataframe tbody tr th {
+  vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+    
+.astro-code {
+  @apply rounded px-4 py-2;
+}
 
 @font-face {
   font-family: 'FiraCode';
