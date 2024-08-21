@@ -32,6 +32,8 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
       </div>
       <div class="animate text-black dark:text-white">
 		  <p set:html={ SOFTWARE.DESCRIPTION }/>
+		  <br />
+		  <p>I've writen a lot of software. I've written less about writing software. To see a more comprehensive index of my software bibliography, check out <u><a href="https://github.com/organizedgrime">my GitHub</a></u>.</p>
       </div>
       <div class="space-y-4">
         {years.map(year => (
