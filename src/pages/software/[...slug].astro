@@ -29,7 +29,7 @@ const { Content } = await software.render();
 		Back to software
 	  </BackToPrev>
     </div>
-    <div class="space-y-1 my-10">
+    <div class="space-y-1 my-5">
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
           <FormattedDate date={software.data.date} />
@@ -43,10 +43,10 @@ const { Content } = await software.render();
         {software.data.title}
       </div>
     </div>
-	<span>
+	<div class="flex">
 	  { software.data.demoURL && <BigButton href=`${software.data.demoURL}`> &emsp;Live Demo</BigButton> }
 	  { software.data.repoURL && <BigButton href=`${software.data.repoURL}`> &emsp;Git Repo</BigButton> }
-	</span>
+	</div>
     <article class="animate">
       <Content />
     </article>
