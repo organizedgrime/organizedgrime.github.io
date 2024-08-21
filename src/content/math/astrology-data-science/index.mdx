@@ -112,7 +112,7 @@ people.head()
 <br/>
 
 <div class="table-container">
-<table class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -193,7 +193,7 @@ occupations.head()
 <br/>
 
 <div class="table-container">
-<table class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -312,7 +312,7 @@ data.head()
 <br/>
 
 <div class="table-container">
-<table class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -393,7 +393,7 @@ data[data["name"] == "Donald Trump"]
 <br/>
 
 <div class="table-container">
-<table class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -587,7 +587,7 @@ data[data["name"] == "Donald Trump"]
 <br/>
 
 <div class="table-container">
-<table class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -634,7 +634,7 @@ data.head()
 <br/>
 
 <div class="table-container">
-<table class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -725,7 +725,7 @@ data.head()
 ```
 <br/>
 <div class="table-container">
-<table class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -900,12 +900,11 @@ print(len(data[(data["dob"].dt.month == 1) & (data["dob"].dt.day == 1)]))
 print(len(data[(data["dob"].dt.month == 1) & (data["dob"].dt.day == 2)]))
 print(len(data[(data["dob"].dt.month == 1) & (data["dob"].dt.day == 3)]))
 ```
-
-    59
-
-    3
-
-    2
+```
+59
+3
+2
+```
 
 <br/>
 As we can see, there are nearly 60 individuals born on January 1st, while there are only 3 and 2 respectively for January 1st and 2nd. Let's fix this by cutting out anyone born on January 1st to get a more normal distribution of sun signs.
@@ -924,6 +923,7 @@ sns.catplot(data=data, x="sunSign", kind="count")
 
 ![png](./final_32_1.png)
 
+<br/>
 Yay! Look at that! Now we have a much more even distribution, and can even see that there are slightly less Aquariuses, which makes sense considering they are known to be less prevalent. Now we can more safely engage in data analysis and hypothesis testing with the knowledge that our data has been normalized to a degree.
 <br/>
 ### Phase 4: Hypothesis testing
@@ -1115,17 +1115,14 @@ model.fit(X, y)
 m_summary(model, X, y)
 ```
 <br/>
-    y = 443150.1631762606x + 567111.6666666707
-
-    score: 0.00019830690397359962
-
-    const     0.776385
-
-    male      0.875777
-
-    female    0.825695
-
-    dtype: float64
+```
+y = 443150.1631762606x + 567111.6666666707
+score: 0.00019830690397359962
+const     0.776385
+male      0.875777
+female    0.825695
+dtype: float64
+```
 
 <br/>
 Our suspicions are confirmed, gender has virtually no correlation and this model fails to account for almost any variances whatsoever.
@@ -1145,29 +1142,20 @@ model.fit(X, y)
 m_summary(model, X, y)
 ```
 <br/>
-    y = 2.2216917906547256e+18x + -2.2216917906544404e+18
-
-    score: 0.035537893481734306
-
-    const         5.523237e-07
-
-    actor         1.806345e-02
-
-    comedian      1.706162e-03
-
-    composer      9.045231e-01
-
-    journalist    4.442004e-01
-
-    musician      5.531202e-01
-
-    politician    2.779397e-01
-
-    singer        7.473999e-03
-
-    writer        1.668012e-01
-
-    dtype: float64
+```
+y = 2.2216917906547256e+18x + -2.2216917906544404e+18
+score: 0.035537893481734306
+const         5.523237e-07
+actor         1.806345e-02
+comedian      1.706162e-03
+composer      9.045231e-01
+journalist    4.442004e-01
+musician      5.531202e-01
+politician    2.779397e-01
+singer        7.473999e-03
+writer        1.668012e-01
+dtype: float64
+```
 <br/>
 Lovely! Our comedians are actually predictive with a 0.001706 P-value, which indicates a strong correlation found! Simultaneously our R2 is up to 0.03, which, although we still fail to explain most of the data variance, indicates that these variables are *less independent* than the previous two we examined.
 <br/>
@@ -1186,19 +1174,15 @@ model.fit(X, y)
 m_summary(model, X, y)
 ```
 <br/>
-    y = 3.964568942166597e+19x + -3.964568942166496e+19
-
-    score: 0.0007185893322776415
-
-    const       2.906234e-09
-
-    Cardinal    1.439460e-01
-
-    Fixed       8.716319e-01
-
-    Mutable     1.289788e-01
-
-    dtype: float64
+```
+y = 3.964568942166597e+19x + -3.964568942166496e+19
+score: 0.0007185893322776415
+const       2.906234e-09
+Cardinal    1.439460e-01
+Fixed       8.716319e-01
+Mutable     1.289788e-01
+dtype: float64
+```
 <br/>
 ```python
 # Hot encode the categorical data
@@ -1213,37 +1197,24 @@ model.fit(X, y)
 m_summary(model, X, y)
 ```
 <br/>
-    y = 2.2599079310566806e+19x + -2.2599079310565396e+19
-    
-    score: 0.006193635056726987
-
-    const    2.770617e-09
-
-    Aqu      8.699674e-01
-
-    Ari      2.016947e-01
-
-    Can      7.509675e-01
-
-    Cap      6.489259e-01
-
-    Gem      1.508482e-01
-
-    Leo      7.772818e-01
-
-    Lib      9.289996e-01
-
-    Pis      2.803997e-01
-
-    Sag      9.520820e-01
-
-    Sco      9.378182e-01
-
-    Tau      4.566120e-01
-
-    Vir      2.927813e-01
-
-    dtype: float64
+```
+y = 2.2599079310566806e+19x + -2.2599079310565396e+19
+score: 0.006193635056726987
+const    2.770617e-09
+Aqu      8.699674e-01
+Ari      2.016947e-01
+Can      7.509675e-01
+Cap      6.489259e-01
+Gem      1.508482e-01
+Leo      7.772818e-01
+Lib      9.289996e-01
+Pis      2.803997e-01
+Sag      9.520820e-01
+Sco      9.378182e-01
+Tau      4.566120e-01
+Vir      2.927813e-01
+dtype: float64
+```
 <br/>
 
 Here, we again see almost no correlation whatsoever, neither for the Quality of the Sun nor its Sign. None of these P-values are below our desired 0.05 threshold, and similarly the R2 score fails to explain almost any data at all.
