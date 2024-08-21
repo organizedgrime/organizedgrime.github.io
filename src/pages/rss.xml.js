@@ -2,12 +2,7 @@ import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { HOME } from "@consts";
 
-type Context = {
-	site: string
-}
-
-
-export async function GET(context: Context) {
+export async function GET(context) {
 	function draft(item) {
 		return !item.data.draft;
 	}
@@ -17,7 +12,7 @@ export async function GET(context: Context) {
 			title: item.data.title,
 			description: item.data.description,
 			pubDate: item.data.date,
-			link: `/${item.collection}/${item.slug}/`,
+			link: `/${item.collection}/${item.slug}`,
 		};
 	}
 

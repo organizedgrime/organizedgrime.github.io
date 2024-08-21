@@ -18,10 +18,12 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"math">;
 
 const math = Astro.props;
+if (math.data.pdf) {
+    return Astro.redirect(`/${math.collection}/${math.data.pdf}`);
+}
 const { Content } = await math.render();
 ---
-
-<PageLayout title={math.data.title} description={math.data.description} pdf={math.data.pdf}>
+<PageLayout title={math.data.title} description={math.data.description}>
   <Container>
     <div class="animate">
       <BackToPrev href="/creations/math">
