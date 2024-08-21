@@ -15,7 +15,7 @@ The primary claim of Natal Astrology is that the alignment and movement of plane
 To answer this question, then, I must find a database of people that includes not only their dates of birth which are fundamental to Astrological computation, but also other variables that we might deep relevant to their personalities.
 Once refined and formatted, we can create graphs and run statistical tests to determine if there are any noteworthy correlations that would cause us to reject the implicit null hypothesis that Natal Astrology has no bearing on individual life outcomes. 
 <br/>
-To download this entire Jupyter notebook, [click here](https://vera.lgbt/projects/Final/final.ipynb).
+To download this entire Jupyter notebook, [click here](/math/ads/final.ipynb).
 <br/>
 #### Phase 1: Data Collection & Parsing
 
@@ -35,7 +35,7 @@ SELECT DISTINCT ?item ?itemLabel ?date_of_birth ?sex_or_genderLabel ?occupation 
 }
 ORDER BY DESC (?date_of_birth)
 ```
-
+<br/>
 Due to the limitations of Wikidata queries and the amount of compute time we are allotted, we cannot actually pull the 'labels' for occupations and labels simultaneously, and instead are fed unique identifiers that are part of the Wikidata system. To remedy this, we have to request those labels as their own queries, which will provide us with the necessary context to infer the true values, rather than the abstract identifiers of these columns.
 <br/>
 ##### `observations.csv` query
@@ -54,12 +54,14 @@ SELECT DISTINCT ?item ?itemLabel ?itemDescription WHERE {
 }
 ```
 <br/>
-Now processed and downloaded, the CSV files in question are available here: \{ [humans_nyc.csv](https://vera.lgbt/projects/Final/humans_nyc.csv), [languages.csv](https://vera.lgbt/projects/Final/languages.csv), [occupations.csv](https://vera.lgbt/projects/Final/occupations.csv) \}
-
+Now processed and downloaded, the CSV files in question are available here:
+- [humans_nyc.csv](/math/ads/humans_nyc.csv)
+- [languages.csv](/math/ads/languages.csv)
+- [occupations.csv](/math/ads/occupations.csv)
+<br/>
 With our data now scraped and ready for processing, let's do some initial setup and get moving!
-
+<br/>
 Here, I'm just importing all the various libraries we'll be utilizing throughout this project.
-
 <br/>
 
 ```python
