@@ -13,6 +13,7 @@ export async function GET(context) {
 			description: item.data.description,
 			pubDate: item.data.date,
 			link: `/${item.collection}/${item.slug}`,
+			customData: `<category>${item.collection}</category>`,
 		};
 	}
 
