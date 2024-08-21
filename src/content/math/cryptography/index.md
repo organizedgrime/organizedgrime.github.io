@@ -1,7 +1,7 @@
 ---
 title: "Cryptography"
-description: "Technical writings."
-date: "Mar 18 2024"
-draft: true
+description: "Code cracking."
+date: "May 17 2022"
+pdf: "CMSC456_Course_Material.pdf"
 ---
 
