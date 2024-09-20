@@ -64,6 +64,7 @@ jobs:
       - name: Commit changes
         run: |
           git add polyblade public/software/polyblade_live
+          git checkout main
           git commit -m "Update submodule to latest commit"
           git push origin HEAD:main
         env:
