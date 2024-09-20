@@ -26,6 +26,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
       - name: Commit changes
         run: |
+          rm -rf public/software/polyblade_live
+          cp -r polyblade/dist public/software/polyblade_live
           git add polyblade public/software/polyblade_live
           git commit -m "Update submodule to latest commit"
           git push origin main
