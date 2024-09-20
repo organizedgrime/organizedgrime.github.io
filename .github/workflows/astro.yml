@@ -69,7 +69,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
       - name: Symlink Submodules
-        run: ln -rs polyblade/dist public/software/polyblade_live
+        run: rm public/software/polyblade_live; ln -rs polyblade/dist public/software/polyblade_live
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
