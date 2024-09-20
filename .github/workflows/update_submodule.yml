@@ -12,9 +12,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-${{ github.workflow }}-${{ inputs.cache_version }}-rust-${{ github.job }}-${{ hashFiles('**/Cargo.toml', '**/Cargo.lock') }}-${{ github.sha }}
+          path: |
+            ~/.cache/sccache
+            ~/.cargo/bin/
+            ~/.cargo/registry/cache/
+            ~/.cargo/registry/index/
+            ~/.cargo/git/db/
+            target/
+          restore-keys: |
+            ${{ runner.os }}-${{ github.workflow }}-${{ inputs.cache_version }}-rust-${{ github.job }}-${{ hashFiles('**/Cargo.toml', '**/Cargo.lock') }}-
+            ${{ runner.os }}-${{ github.workflow }}-${{ inputs.cache_version }}-rust-${{ github.job }}-
         with:
           token: ${{ secrets.PAT }}
           submodules: recursive
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
       - name: Authorize Git
         run: |
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
@@ -24,11 +40,28 @@ jobs:
           git submodule update  --init --recursive --remote -f
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
-      - name: Commit changes
+      - name: Build Wasm
+        # easily install any rust bins without building them
+        uses: cargo-bins/cargo-binstall@main
+        # install cargo-auditable to produce the binary
+        run: cargo binstall -y trunk 
+        # install sccache (compilation cache)
+        uses: mozilla-actions/sccache-action@v0.0.4
+        # install mold (linker)
+        uses: rui314/setup-mold@v1
+        run: ld --version
+        name: trunk build
+        run: |
+          cd polyblade
+          trunk build
+          cd ..
+      - name: Create Public Files
         run: |
           rm -rf public/software/polyblade_live
           cp -r polyblade/dist public/software/polyblade_live
           sed -i "s/href=\"\//href=\"\/software\/polyblade_live\//g" public/software/polyblade_live/index.html
+      - name: Commit changes
+        run: |
           git add polyblade public/software/polyblade_live
           git commit -m "Update submodule to latest commit"
           git push origin main
