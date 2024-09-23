@@ -54,7 +54,7 @@ jobs:
       - name: Trunk Build
         run: |
           cd polyblade
-          trunk build
+          trunk build --release
           cd ..
       - name: Create Public Files
         run: |
