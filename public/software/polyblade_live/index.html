@@ -4,17 +4,10 @@
 <head>
 	<meta charset="utf-8" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Polyblade</title>
-	<base href="/" />
-
-<link rel="modulepreload" href="/software/polyblade_live/polyblade-9a05c6755c15349.js" crossorigin=anonymous integrity="sha384-XH/JH0tROepjEurgXQc2Qd2GqwnyK5++RpsVaBxt3DTzDugJLzav3kqh8yCUxH4v">
-<link rel="preload" href="/software/polyblade_live/polyblade-9a05c6755c15349_bg.wasm" crossorigin=anonymous integrity="sha384-AH52RtTHAGoMCwTO3+v7Pe1En4Rc/ahUF0y2lv2tHVVunvYi+Oh7VKWmTREyRMdF" as="fetch" type="application/wasm"></head>
-
-<body style="height: 100%; margin: 0">
 	
-<script type="module" nonce="Gqy+Shvi9eOB82jq3/azew==">
-import init, * as bindings from '/software/polyblade_live/polyblade-9a05c6755c15349.js';
-const wasm = await init('/software/polyblade_live/polyblade-9a05c6755c15349_bg.wasm');
+<script type="module" nonce="3r6vyTV0haQl9AdraSP9bg==">
+import init, * as bindings from '/software/polyblade_live/polyblade-f3275694fde98c.js';
+const wasm = await init('/software/polyblade_live/polyblade-f3275694fde98c_bg.wasm');
 
 
 window.wasmBindings = bindings;
@@ -23,6 +16,41 @@ window.wasmBindings = bindings;
 dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
 </script>
+	<title>Polyblade</title>
+	<base href="/" />
+	<style>
+		:focus {
+			outline: none;
+		}
+
+		body {
+			margin: 0px;
+			background: #fff;
+			font-family: "Calibri", "Arial", sans-serif;
+			width: 100%;
+			height: 100%;
+		}
+
+		.root {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.main-canvas {
+			margin: 0;
+			/* This allows the flexbox to grow to max size, this is needed for WebGPU */
+			flex: 1;
+			/* This forces CSS to ignore the width/height of the canvas, this is needed for WebGL */
+			contain: size;
+		}
+	</style>
+<link rel="modulepreload" href="/software/polyblade_live/polyblade-f3275694fde98c.js" crossorigin=anonymous integrity="sha384-hPcff/tQ2ff7bQHDA2iK6E9P/qD4AvHRfES/vypKit2bRZQVcWqb+5/naVe9Q9jx"><link rel="preload" href="/software/polyblade_live/polyblade-f3275694fde98c_bg.wasm" crossorigin=anonymous integrity="sha384-DrQpphIdf/TLS6qeXqvOYIwiiyITVc3ELrK5e0ga2dUiF9bmMA5ew3+aSQ8bQrkp" as="fetch" type="application/wasm"></head>
+
+<body>
+	<div id="polyblade" class="root">
+	</div>
 </body>
 
 </html>
