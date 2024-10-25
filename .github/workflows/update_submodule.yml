@@ -61,6 +61,12 @@ jobs:
           rm -rf public/software/polyblade_live
           cp -r polyblade/dist public/software/polyblade_live
           sed -i "s/\/polyblade-/\/software\/polyblade_live\/polyblade-/g" public/software/polyblade_live/index.html
+      - name: Update Article Readme
+        run: |
+          rm -rf src/content/software/polyblade/index.mdx public/software/polyblade_assets
+          cp -r polyblade/assets public/software/polyblade_assets
+          cat src/content/software/polyblade/index.header polyblade/README.md > src/content/software/polyblade/index.mdx
+          sed -i "s/assets/polyblade_assets/g" src/content/software/polyblade/index.mdx
       - name: Commit changes
         run: |
           git add polyblade public/software/polyblade_live
