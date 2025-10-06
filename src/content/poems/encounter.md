@@ -1,7 +1,8 @@
 ---
-title: "encounter"
-date: "May 22 2024"
+title: encounter
+date: 2024-05-22T04:00:00.000Z
 ---
+
 fire in those eyes
 
 a crisp white fire
@@ -12,7 +13,7 @@ a fire so bright
 
 that i can’t meet that gaze
 
-i’m far too weak, 
+i’m far too weak,
 
 to take that pain away
 
@@ -20,9 +21,9 @@ to take that pain away
 
 there are strata of suffering
 
-which ___ are unaware of
+which \_\_\_ are unaware of
 
-_____ we don’t have words for,
+\_\_\_\_\_ we don’t have words for,
 
 nor should we
 
@@ -34,7 +35,7 @@ hot in my veins
 
 let me out of this flesh,
 
-&emsp;&emsp;*now.*
+  *now.*
 
 <br/>
 
@@ -54,9 +55,9 @@ taller than i expected.
 
 <br/>
 
-i cannot mute ______s that are not spoken with sound.
+i cannot mute \_\_\_\_\_\_s that are not spoken with sound.
 
-i cannot unsee 
+i cannot unsee
 
 what i never chose to see.
 

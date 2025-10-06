@@ -29,7 +29,7 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
+        name: "poem",
         label: "Poems",
         path: "src/content/poems",
         fields: [
@@ -45,6 +45,12 @@ export default defineConfig({
             name: "date",
             label: "Date",
             required: true,
+          },
+          {
+            type: "image",
+            name: "photo",
+            label: "Photo",
+            required: false,
           },
           {
             type: "rich-text",
