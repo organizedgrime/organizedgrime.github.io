@@ -16,15 +16,12 @@ const projectId = PUBLIC_SANITY_STUDIO_PROJECT_ID || PUBLIC_SANITY_PROJECT_ID;
 const dataset = PUBLIC_SANITY_STUDIO_DATASET || PUBLIC_SANITY_DATASET;
 
 import react from "@astrojs/react";
-// Change this depending on your hosting provider (Vercel, Netlify etc)
-// https://docs.astro.build/en/guides/server-side-rendering/#adding-an-adapter
 import vercel from "@astrojs/vercel/serverless";
 import sanity from "@sanity/astro";
 
 // https://astro.build/config
 export default defineConfig({
-  // Hybrid+adapter is required to support embedded Sanity Studio
-  output: "hybrid",
+  output: "server",
   adapter: vercel({
     runtime: "nodejs20.x",
   }),
@@ -34,7 +31,6 @@ export default defineConfig({
       dataset,
       // studioBasePath: "/admin",
       useCdn: false,
-      // `false` if you want to ensure fresh data
       apiVersion: "2025-10-05", // Set to date of setup to use the latest API version
     }),
     react(), // Required for Sanity Studio
