@@ -1,4 +1,5 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity'
+import { common } from '../fields'
 
 /**
  * Post schema.  Define and edit the fields for the 'post' content type.
@@ -6,61 +7,30 @@ import { defineField, defineType } from "sanity";
  */
 
 export default defineType({
-  name: "post",
-  title: "Post",
-  type: "document",
+  name: 'post',
+  title: 'Post',
+  type: 'document',
   fields: [
+    common.title,
+    common.slug,
     defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
-    }),
-    defineField({
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
-    }),
-    defineField({
-      name: "excerpt",
-      title: "Excerpt",
-      type: "text",
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
       rows: 4,
     }),
-    defineField({
-      name: "mainImage",
-      title: "Main image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        defineField({
-          name: "alt",
-          title: "Alternative text",
-          type: "string",
-        }),
-      ],
-    }),
-    defineField({
-      name: "body",
-      title: "Body",
-      type: "blockContent",
-    }),
+    common.photo,
+    common.body,
   ],
   preview: {
     select: {
-      title: "title",
-      author: "author.name",
-      media: "mainImage",
+      title: 'title',
+      author: 'author.name',
+      media: 'photo',
     },
     prepare(selection) {
-      const { author } = selection;
-      return { ...selection, subtitle: author && `by ${author}` };
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
-});
+})
