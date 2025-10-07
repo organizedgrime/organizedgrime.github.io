@@ -15,6 +15,7 @@ export async function getStaticPaths() {
     props: poem,
   }));
 }
+
 type Props = CollectionEntry<"poems">;
 
 const poem = Astro.props;
@@ -42,9 +43,17 @@ const { Content } = await poem.render();
         {poem.data.title}
       </div>
     </div>
+    {poem.data.photo && (
+      <div class="animate my-8">
+        <img
+          src={poem.data.photo}
+          alt={poem.data.title}
+          class="w-full h-auto rounded-lg shadow-lg object-cover"
+        />
+      </div>
+    )}
     <article class="animate">
       <Content />
     </article>
   </Container>
 </PageLayout>
-

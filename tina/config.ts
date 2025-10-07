@@ -1,4 +1,4 @@
-import { defineConfig } from "tinacms";
+import { defineConfig, type TinaField } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -6,6 +6,46 @@ const branch =
   process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
   "main";
+
+const COMMON_FIELDS: Record<string, TinaField> = {
+  title: {
+    type: "string",
+    name: "title",
+    label: "Title",
+    isTitle: true,
+    required: true,
+  },
+  date: {
+    type: "datetime",
+    name: "date",
+    label: "Date",
+    required: true,
+  },
+  body: {
+    type: "rich-text",
+    name: "body",
+    label: "Body",
+    isBody: true,
+  },
+  gallery: {
+    label: "Gallery",
+    name: "gallery",
+    type: "object",
+    list: true,
+    fields: [
+      {
+        label: "Alt",
+        name: "alt",
+        type: "string",
+      },
+      {
+        label: "Image",
+        name: "image",
+        type: "image",
+      },
+    ],
+  },
+};
 
 export default defineConfig({
   branch,
@@ -33,31 +73,64 @@ export default defineConfig({
         label: "Poems",
         path: "src/content/poems",
         fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "datetime",
-            name: "date",
-            label: "Date",
-            required: true,
-          },
+          COMMON_FIELDS.title,
+          COMMON_FIELDS.date,
+          COMMON_FIELDS.body,
           {
             type: "image",
             name: "photo",
             label: "Photo",
             required: false,
           },
+        ],
+      },
+      {
+        name: "software",
+        label: "Software",
+        path: "src/content/software",
+        fields: [
+          COMMON_FIELDS.title,
+          COMMON_FIELDS.date,
+          COMMON_FIELDS.body,
+          COMMON_FIELDS.gallery,
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
+            type: "string",
+            name: "repoURL",
+            label: "Repo URL",
           },
+          {
+            type: "string",
+            name: "demoURL",
+            label: "Demo URL",
+          },
+        ],
+      },
+      {
+        name: "work",
+        label: "Work",
+        path: "src/content/work",
+        fields: [
+          {
+            type: "string",
+            name: "company",
+            label: "Company",
+          },
+          {
+            type: "string",
+            name: "role",
+            label: "Role",
+          },
+          {
+            type: "datetime",
+            name: "dateStart",
+            label: "Start Date",
+          },
+          {
+            type: "datetime",
+            name: "dateEnd",
+            label: "End Date",
+          },
+          COMMON_FIELDS.body,
         ],
       },
     ],
