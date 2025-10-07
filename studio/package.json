@@ -15,28 +15,23 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^4.10.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "sanity": "^4.10.2",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "sanity": "catalog:",
+    "@sanity/vision": "catalog:",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^5.0.2",
-    "@types/react": "^19.2.1",
-    "eslint": "^9.37.0",
-    "prettier": "^3.6.2",
-    "typescript": "^5.9.3"
+    "@sanity/eslint-config-studio": "catalog:",
+    "@types/react": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "eslint": "catalog:"
   },
   "prettier": {
     "semi": false,
     "printWidth": 100,
     "bracketSpacing": false,
     "singleQuote": true
-  },
-  "pnpm": {
-    "overrides": {
-      "sanity": "$sanity"
-    }
   }
 }
