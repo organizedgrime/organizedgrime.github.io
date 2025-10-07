@@ -21,10 +21,10 @@
     "astro-app"
   ],
   "devDependencies": {
-    "concurrently": "^9.1.0"
+    "concurrently": "^9.2.1"
   },
   "type": "module",
   "dependencies": {
-    "styled-components": "^6.1"
+    "styled-components": "^6.1.19"
   }
 }
