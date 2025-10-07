@@ -1,46 +1,18 @@
-// sanity.config.ts
-import { defineConfig, defineType } from "sanity";
-import { structureTool } from "sanity/structure";
+import {defineConfig} from 'sanity'
+import {structureTool} from 'sanity/structure'
+import {visionTool} from '@sanity/vision'
+import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
-  name: "project-name",
-  title: "Project Name",
-  projectId: import.meta.env.PUBLIC_SANITY_STUDIO_PROJECT_ID,
-  dataset: import.meta.env.PUBLIC_SANITY_STUDIO_DATASET,
-  plugins: [structureTool()],
+  name: 'default',
+  title: 'vera.lgbt',
+
+  projectId: '6tjjkwn7',
+  dataset: 'production',
+
+  plugins: [structureTool(), visionTool()],
+
   schema: {
-    types: [
-      defineType({
-        name: "poem",
-        title: "Poem",
-        type: "document",
-        fields: [
-          {
-            name: "title",
-            title: "Title",
-            type: "string",
-          },
-          {
-            name: "date",
-            title: "Date",
-            type: "date",
-          },
-          {
-            name: "photo",
-            title: "Photo",
-            type: "image",
-          },
-          {
-            name: "slug",
-            title: "Slug",
-            type: "slug",
-            options: {
-              source: "title",
-              maxLength: 96,
-            },
-          },
-        ],
-      }),
-    ],
+    types: schemaTypes,
   },
-});
+})
