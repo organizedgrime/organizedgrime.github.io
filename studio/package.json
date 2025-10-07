@@ -33,5 +33,10 @@
     "printWidth": 100,
     "bracketSpacing": false,
     "singleQuote": true
+  },
+  "pnpm": {
+    "overrides": {
+      "sanity": "$sanity"
+    }
   }
 }
