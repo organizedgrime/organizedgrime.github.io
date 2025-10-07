@@ -1,37 +1,27 @@
 {
   "name": "veralgbt",
-  "private": true,
-  "version": "1.0.0",
-  "main": "package.json",
-  "license": "UNLICENSED",
+  "description": "Minimal Astro site with Sanity Studio",
   "scripts": {
-    "dev": "sanity dev",
-    "start": "sanity start",
-    "build": "sanity build",
-    "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "dev": "concurrently \"npm run dev --workspace=astro-app\" \"npm run dev --workspace=studio\""
   },
   "keywords": [
-    "sanity"
+    "Sanity",
+    "Astro",
+    "Headless CMS",
+    "Visual Editing",
+    "Live Content API (LCAPI)",
+    "Real-time"
   ],
-  "dependencies": {
-    "@sanity/vision": "^4.10.2",
-    "react": "^19.1",
-    "react-dom": "^19.1",
-    "sanity": "^4.10.2",
-    "styled-components": "^6.1.18"
+  "bugs": {
+    "url": "https://github.com/sanity-io/sanity-template-astro-clean/issues"
   },
+  "homepage": "https://github.com/sanity-io/sanity-template-astro-clean#readme",
+  "workspaces": [
+    "studio",
+    "astro-app"
+  ],
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^5.0.2",
-    "@types/react": "^19.1",
-    "eslint": "^9.28",
-    "prettier": "^3.5",
-    "typescript": "^5.8"
+    "concurrently": "^9.1.0"
   },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
-  }
+  "type": "module"
 }
