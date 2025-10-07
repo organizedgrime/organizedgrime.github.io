@@ -35,6 +35,6 @@ export const common: Record<string, FieldDefinition> = {
   body: defineField({
     name: "body",
     title: "Body",
-    type: "blockContent",
+    type: "markdown",
   }),
 };

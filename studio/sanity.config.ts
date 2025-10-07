@@ -1,6 +1,7 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { markdownSchema } from "sanity-plugin-markdown";
 import { schemaTypes } from "./src/schemaTypes";
 
 // Environment variables for project configuration
@@ -12,7 +13,7 @@ export default defineConfig({
   title: "Vera Gonzalez",
   projectId,
   dataset,
-  plugins: [structureTool(), visionTool()],
+  plugins: [structureTool(), visionTool(), markdownSchema()],
   schema: {
     types: schemaTypes,
   },
