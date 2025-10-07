@@ -21,7 +21,8 @@
     "astro-app"
   ],
   "devDependencies": {
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.1",
+    "taze": "^19.7.0"
   },
   "type": "module",
   "dependencies": {
