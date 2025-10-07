@@ -22,9 +22,6 @@ import sanity from "@sanity/astro";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: vercel({
-    runtime: "nodejs20.x",
-  }),
   integrations: [
     sanity({
       projectId,
@@ -35,4 +32,7 @@ export default defineConfig({
     }),
     react(), // Required for Sanity Studio
   ],
+  adapter: vercel({
+    runtime: "nodejs20.x",
+  }),
 });
