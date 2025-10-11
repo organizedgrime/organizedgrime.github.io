@@ -11,12 +11,12 @@ const projectId = process.env.SANITY_STUDIO_PROJECT_ID || "vhh501ab";
 const dataset = process.env.SANITY_STUDIO_DATASET || "production";
 
 export default defineCliConfig({
-	api: {
-		projectId,
-		dataset,
-	},
-	studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || "", // Visit https://www.sanity.io/docs/environment-variables to leanr more about using environment variables for local & production.
-	deployment: {
-		autoUpdates: true,
-	},
+  api: {
+    projectId,
+    dataset,
+  },
+  studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || "", // Visit https://www.sanity.io/docs/environment-variables to leanr more about using environment variables for local & production.
+  deployment: {
+    autoUpdates: true,
+  },
 });

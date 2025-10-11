@@ -9,12 +9,12 @@ const projectId = process.env.SANITY_STUDIO_PROJECT_ID || "vhh501ab";
 const dataset = process.env.SANITY_STUDIO_DATASET || "production";
 
 export default defineConfig({
-	name: "recursivepaws",
-	title: "Vera Gonzalez",
-	projectId,
-	dataset,
-	plugins: [structureTool(), visionTool(), markdownSchema()],
-	schema: {
-		types: schemaTypes,
-	},
+  name: "recursivepaws",
+  title: "Vera Gonzalez",
+  projectId,
+  dataset,
+  plugins: [structureTool(), visionTool(), markdownSchema()],
+  schema: {
+    types: schemaTypes,
+  },
 });

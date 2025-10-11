@@ -7,30 +7,30 @@ import { common } from "../fields";
  */
 
 export default defineType({
-	name: "post",
-	title: "Post",
-	type: "document",
-	fields: [
-		common.title,
-		common.slug,
-		defineField({
-			name: "excerpt",
-			title: "Excerpt",
-			type: "text",
-			rows: 4,
-		}),
-		common.photo,
-		common.body,
-	],
-	preview: {
-		select: {
-			title: "title",
-			author: "author.name",
-			media: "photo",
-		},
-		prepare(selection) {
-			const { author } = selection;
-			return { ...selection, subtitle: author && `by ${author}` };
-		},
-	},
+  name: "post",
+  title: "Post",
+  type: "document",
+  fields: [
+    common.title,
+    common.slug,
+    defineField({
+      name: "excerpt",
+      title: "Excerpt",
+      type: "text",
+      rows: 4,
+    }),
+    common.photo,
+    common.body,
+  ],
+  preview: {
+    select: {
+      title: "title",
+      author: "author.name",
+      media: "photo",
+    },
+    prepare(selection) {
+      const { author } = selection;
+      return { ...selection, subtitle: author && `by ${author}` };
+    },
+  },
 });

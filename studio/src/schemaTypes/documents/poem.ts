@@ -7,14 +7,14 @@ import { common } from "../fields";
  */
 
 export default defineType({
-	name: "poem",
-	title: "Poem",
-	type: "document",
-	fields: [common.title, common.date, common.slug, common.photo, common.body],
-	preview: {
-		select: {
-			title: "title",
-			media: "photo",
-		},
-	},
+  name: "poem",
+  title: "Poem",
+  type: "document",
+  fields: [common.title, common.date, common.slug, common.photo, common.body],
+  preview: {
+    select: {
+      title: "title",
+      media: "photo",
+    },
+  },
 });
