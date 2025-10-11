@@ -45,7 +45,7 @@ jobs:
       # easily install any rust bins without building them
       - uses: cargo-bins/cargo-binstall@main
       # install cargo-auditable to produce the binary
-      - run: cargo binstall -y trunk 
+      - run: cargo binstall -y trunk
       # install sccache (compilation cache)
       - uses: mozilla-actions/sccache-action@v0.0.4
       # install mold (linker)

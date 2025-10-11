@@ -29,11 +29,11 @@
 		"sanity": "catalog:"
 	},
 	"devDependencies": {
-		"@sanity/types": "catalog:",
 		"@biomejs/biome": "catalog:",
-		"typescript": "catalog:",
-		"vite": "catalog:",
+		"@portabletext/types": "2.0.15",
+		"@sanity/types": "catalog:",
 		"rimraf": "6.0.1",
-		"@portabletext/types": "2.0.15"
+		"typescript": "catalog:",
+		"vite": "catalog:"
 	}
 }

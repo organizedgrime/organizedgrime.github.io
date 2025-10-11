@@ -24,9 +24,9 @@
 		"styled-components": "^6.1.19"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "catalog:",
 		"@types/react": "catalog:",
-		"typescript": "catalog:",
-		"@biomejs/biome": "catalog:"
+		"typescript": "catalog:"
 	},
 	"prettier": {
 		"semi": false,
