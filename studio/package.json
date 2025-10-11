@@ -20,6 +20,7 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "sanity": "catalog:",
+    "sanity-plugin-icon-picker": "^4.0.0",
     "sanity-plugin-markdown": "^6.0.0",
     "styled-components": "^6.1.19"
   },

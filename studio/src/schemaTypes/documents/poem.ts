@@ -10,7 +10,14 @@ export default defineType({
   name: "poem",
   title: "Poem",
   type: "document",
-  fields: [common.title, common.date, common.slug, common.photo, common.body],
+  fields: [
+    common.title,
+    common.slug,
+    common.icon,
+    common.date,
+    common.photo,
+    common.body,
+  ],
   preview: {
     select: {
       title: "title",

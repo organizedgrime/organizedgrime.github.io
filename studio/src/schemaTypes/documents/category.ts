@@ -2,8 +2,8 @@ import { defineType } from "sanity";
 import { common } from "../fields";
 
 export default defineType({
-  name: "collection",
-  title: "Collection",
+  name: "category",
+  title: "Category",
   type: "document",
   fields: [common.title, common.slug],
   preview: {

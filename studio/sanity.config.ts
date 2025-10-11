@@ -1,6 +1,7 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import { iconPicker } from "sanity-plugin-icon-picker";
 import { markdownSchema } from "sanity-plugin-markdown";
 import { schemaTypes } from "./src/schemaTypes";
 
@@ -13,7 +14,7 @@ export default defineConfig({
   title: "Vera Gonzalez",
   projectId,
   dataset,
-  plugins: [structureTool(), visionTool(), markdownSchema()],
+  plugins: [structureTool(), visionTool(), markdownSchema(), iconPicker()],
   schema: {
     types: schemaTypes,
   },
