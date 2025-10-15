@@ -14,6 +14,7 @@ export default defineType({
       title: "Is this art?",
       name: "art",
       type: "boolean",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
