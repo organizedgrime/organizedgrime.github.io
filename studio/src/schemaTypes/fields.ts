@@ -3,6 +3,7 @@ import { defineField, type FieldDefinition } from "sanity";
 export enum Common {
   title = "title",
   date = "date",
+  published = "published",
   slug = "slug",
   photo = "photo",
   gallery = "gallery",
@@ -22,6 +23,12 @@ export const common: Record<Common, FieldDefinition> = {
     name: "date",
     title: "Date",
     type: "date",
+    validation: (Rule) => Rule.required(),
+  }),
+  published: defineField({
+    name: "published",
+    title: "Published",
+    type: "boolean",
     validation: (Rule) => Rule.required(),
   }),
   slug: defineField({

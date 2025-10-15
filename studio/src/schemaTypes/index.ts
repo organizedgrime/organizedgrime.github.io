@@ -1,9 +1,5 @@
-import article from "./documents/article";
-import collection from "./documents/category";
-import origami from "./documents/origami";
-import poem from "./documents/poem";
+import category from "./documents/category";
 import post from "./documents/post";
-import software from "./documents/software";
 import blockContent from "./objects/blockContent";
 import captionedImage from "./objects/captionedImage";
 import iconButton from "./objects/iconButton";
@@ -12,11 +8,7 @@ import iconButton from "./objects/iconButton";
 
 export const schemaTypes = [
   post,
-  collection,
-  poem,
-  software,
-  origami,
-  article,
+  category,
   blockContent,
   captionedImage,
   iconButton,

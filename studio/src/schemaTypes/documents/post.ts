@@ -6,6 +6,7 @@ import { common } from "../fields";
  * Learn more: https://www.sanity.io/docs/schema-types
  */
 
+// everything should be a post
 export default defineType({
   name: "post",
   title: "Post",
@@ -13,13 +14,12 @@ export default defineType({
   fields: [
     common.title,
     common.slug,
-    defineField({
-      name: "excerpt",
-      title: "Excerpt",
-      type: "text",
-      rows: 4,
-    }),
+    common.category,
+    common.buttons,
+    common.icon,
+    common.date,
     common.photo,
+    common.gallery,
     common.body,
   ],
   preview: {
