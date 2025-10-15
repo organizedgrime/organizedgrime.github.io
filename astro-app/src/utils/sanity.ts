@@ -11,7 +11,10 @@ export async function getPosts(): Promise<Post[]> {
 
 export async function getPost(slug: string): Promise<Post> {
   return await sanityClient.fetch(
-    groq`*[_type == "post" && defined(slug.current) && slug.current == ${slug}][0]`,
+    groq`*[_type == "post" && defined(slug.current) && slug.current == $slug][0]`,
+    {
+      slug,
+    },
   );
 }
 

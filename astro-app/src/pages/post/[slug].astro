@@ -4,7 +4,8 @@ import { PortableText } from "astro-portabletext";
 import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../utils";
 import { urlFor } from "../../utils/image";
-import { getPost, getPosts, type Post } from "../../utils/sanity";
+import { getPost, getPosts } from "../../utils/sanity";
+import { marked } from 'marked';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -12,9 +13,14 @@ export async function getStaticPaths() {
     params: { slug: post.slug.current },
   }));
 }
+
 type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 const { slug } = Astro.params as Params;
+
 const post = await getPost(slug);
+
+// Convert markdown to HTML
+const htmlContent = marked.parse(post.body ?? "");
 ---
 
 <Layout title={post.title!}>
@@ -24,7 +30,7 @@ const post = await getPost(slug);
         <img
           class="post__cover"
           src={urlFor(post.photo).url()}
-          alt={post.photo.alt || "Cover Photo" }
+          alt={post.photo.alt}
         />
       ) : (
         <div class="post__cover--none" />
@@ -36,8 +42,7 @@ const post = await getPost(slug);
       <p class="post__date">
         {formatDate(post._createdAt)}
       </p>
-      <div class="post__content">
-        <PortableText value={post.body} />
+      <div class="post__content" set:html={htmlContent}>
       </div>
     </div>
   </section>
