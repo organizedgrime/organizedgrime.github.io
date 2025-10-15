@@ -27,5 +27,5 @@ export interface Post {
   slug: Slug;
   excerpt?: string;
   photo?: Photo;
-  body: PortableTextBlock[];
+  body?: string;
 }
