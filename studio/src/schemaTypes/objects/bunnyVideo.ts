@@ -9,6 +9,14 @@ export default defineType({
       name: "id",
       title: "Identifier",
       type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "vertical",
+      title: "Vertical?",
+      type: "boolean",
+      initialValue: false,
+      validation: (rule) => rule.required(),
     }),
   ],
 });

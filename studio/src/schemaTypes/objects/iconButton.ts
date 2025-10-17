@@ -10,19 +10,19 @@ export default defineType({
       title: "Icon",
       name: "icon",
       type: "iconPicker",
-      validation: (Rule) => Rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       title: "URL",
       name: "url",
       type: "url",
-      validation: (Rule) => Rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       title: "Label",
       name: "label",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
