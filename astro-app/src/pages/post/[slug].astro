@@ -1,11 +1,11 @@
 ---
 import type { InferGetStaticParamsType } from "astro";
-import { PortableText } from "astro-portabletext";
 import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../utils";
 import { urlFor } from "../../utils/image";
 import { getPost, getPosts } from "../../utils/sanity";
 import { marked } from 'marked';
+import Gallery from "../../components/Gallery.astro";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -42,6 +42,9 @@ const htmlContent = marked.parse(post.body ?? "");
       <p class="post__date">
         {formatDate(post.date)}
       </p>
+      <div class="post__content">
+        <Gallery gallery={post.gallery}>
+      </div>
       <div class="post__content" set:html={htmlContent}>
       </div>
     </div>
