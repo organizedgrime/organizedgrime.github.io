@@ -56,6 +56,9 @@ export const common: Record<Common, FieldDefinition> = {
     name: "icon",
     title: "Icon",
     type: "iconPicker",
+    options: {
+      storeSvg: true,
+    },
   }),
   buttons: defineField({
     name: "buttons",

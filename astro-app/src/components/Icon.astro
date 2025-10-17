@@ -1,0 +1,14 @@
+---
+import type {Icon} from "../utils/sanity"
+
+interface Props {
+  icon: Icon
+};
+
+const { icon } = Astro.props;
+const imgSrc = `data:image/svg+xml,${icon.svg}`;
+---
+<div>
+<img src={imgSrc} />
+<p>greg</p>
+</div>

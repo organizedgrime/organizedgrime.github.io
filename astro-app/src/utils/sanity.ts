@@ -1,5 +1,4 @@
 import { sanityClient } from "sanity:client";
-import type { PortableTextBlock } from "@portabletext/types";
 import type { ImageAsset, Slug } from "@sanity/types";
 import groq from "groq";
 
@@ -18,11 +17,23 @@ export async function getPost(slug: string): Promise<Post> {
   );
 }
 
+export type Category = {
+  title?: string;
+  icon?: Icon;
+  art: boolean;
+};
 export type Photo = ImageAsset & { alt?: string };
+
+export interface Icon {
+  svg: string;
+}
 
 export interface Post {
   _type: "post";
   _createdAt: string;
+  category?: Category;
+  icon?: Icon;
+  date: string;
   title?: string;
   slug: Slug;
   excerpt?: string;
