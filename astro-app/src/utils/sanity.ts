@@ -31,6 +31,7 @@ export interface Icon {
 
 export interface Video {
   id: string;
+  vertical: boolean;
 }
 
 export type Gallery = Array<Photo | Video>;

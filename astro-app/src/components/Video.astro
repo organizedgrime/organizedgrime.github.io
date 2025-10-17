@@ -5,7 +5,7 @@ interface Props {
 }
 const { video } = Astro.props;
 ---
-<div style="position:relative;padding-top:56.25%;">
+<div style={`position:relative;padding-top:${video.vertical ? '177.77%' : '56.25%'};`}>
   <iframe
      src={`https://player.mediadelivery.net/embed/514155/${video.id}?autoplay=true&loop=true&muted=false&preload=true&responsive=true`}
      loading="lazy"
