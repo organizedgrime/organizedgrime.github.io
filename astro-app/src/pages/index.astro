@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import { getPosts } from "../utils/sanity";
 
 const posts = await getPosts();
+console.log(`posts: ${JSON.stringify(posts)}`);
 ---
 
 <Layout title="Welcome to Astro.">

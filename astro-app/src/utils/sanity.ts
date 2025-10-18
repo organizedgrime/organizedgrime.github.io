@@ -9,12 +9,18 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 export async function getPost(slug: string): Promise<Post> {
-  return await sanityClient.fetch(
+  const post = await sanityClient.fetch(
     groq`*[_type == "post" && defined(slug.current) && slug.current == $slug][0]`,
     {
       slug,
     },
   );
+
+  if (!post) {
+    throw new Error(`Document not found: \`post\` with slug ${slug}`);
+  }
+
+  return post;
 }
 
 export async function getCategories(): Promise<Category[]> {

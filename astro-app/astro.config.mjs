@@ -26,9 +26,9 @@ export default defineConfig({
     sanity({
       projectId,
       dataset,
-      // studioBasePath: "/admin",
       useCdn: false,
       apiVersion: "2025-10-05", // Set to date of setup to use the latest API version
+      studioBasePath: "/admin",
     }),
     react(), // Required for Sanity Studio
   ],

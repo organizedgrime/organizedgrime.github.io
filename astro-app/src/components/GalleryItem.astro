@@ -14,7 +14,7 @@ const { item } = Astro.props;
     (
     item._type ===
    "bunnyVideo" ?
-    (<VideoComponent video={item} />) :
+    (<VideoComponent video={item} client:load />) :
     (<PhotoComponent photo={item} />)
     )
   }
