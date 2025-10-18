@@ -1,21 +1,22 @@
 ---
-import type { Photo, Video} from "../utils/sanity"
+import type { Photo, Video } from "../utils/sanity";
 import VideoComponent from "./Video.astro";
 import PhotoComponent from "./Photo.astro";
 
 interface Props {
-  item?: Photo | Video
-};
+  item?: Photo | Video;
+}
 
 const { item } = Astro.props;
 ---
+
 <section>
-  { item &&
-    (
-    item._type ===
-   "bunnyVideo" ?
-    (<VideoComponent video={item} client:load />) :
-    (<PhotoComponent photo={item} />)
-    )
+  {
+    item &&
+      (item._type === "bunnyVideo" ? (
+        <VideoComponent video={item} client:load />
+      ) : (
+        <PhotoComponent photo={item} />
+      ))
   }
 </section>

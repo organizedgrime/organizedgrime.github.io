@@ -1,12 +1,13 @@
 ---
 import { urlFor } from "../utils/image";
 import type { Photo } from "../utils/sanity";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 interface Props {
   photo: Photo;
 }
 const { photo } = Astro.props;
 ---
+
 <Image
   class="card__cover"
   src={urlFor(photo).width(500).height(300).url()}

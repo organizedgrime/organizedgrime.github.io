@@ -24,7 +24,6 @@
     "autoprefixer": "10.4.21",
     "groq": "4.10.2",
     "marked": "^16.4.1",
-    "prettier-plugin-astro": "0.14.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "sanity": "^4.10.3",
@@ -35,6 +34,8 @@
     "@biomejs/biome": "^2.2.6",
     "@portabletext/types": "2.0.15",
     "@sanity/types": "^4.10.3",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "0.14.1",
     "rimraf": "6.0.1",
     "typescript": "^5.9.3",
     "vite": "^7.1.10"

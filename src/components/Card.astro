@@ -9,26 +9,30 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const category: Category = await getReference<Category>({ type: "category", ref: post.category._ref });
+const category: Category = await getReference<Category>({
+  type: "category",
+  ref: post.category._ref,
+});
 ---
+
 <div class="card">
   {
-  post.gallery?.length ? <GalleryItem item={post.gallery[0]} /> : (
+    post.gallery?.length ? (
+      <GalleryItem item={post.gallery[0]} />
+    ) : (
       <div class="card__cover--none" />
     )
   }
   <div class="card__container">
     <h3 class="card__title">
-      <a
-        class="card__link"
-        href={`/post/${post.slug.current}`}
-      >
+      <a class="card__link" href={`/post/${post.slug.current}`}>
         {post.title}
-        {post.icon && <IconComponent icon={post.icon} /> }
+        {post.icon && <IconComponent icon={post.icon} />}
       </a>
     </h3>
     <p class="card__excerpt">
-    {category && <IconComponent icon={category.icon} /> }</p>
+      {category && <IconComponent icon={category.icon} />}
+    </p>
     <p class="card__date">
       {formatDate(post.date)}
     </p>
