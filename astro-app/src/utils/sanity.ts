@@ -30,15 +30,21 @@ export async function getReference<T>({
   type: string;
   ref: string;
 }): Promise<T> {
-  return await sanityClient.fetch(groq`*[_type == "$type" && _id == $ref][0]`, {
-    type,
-    ref,
-  });
+  const result = await sanityClient.fetch<T | null>(
+    groq`*[_type == $type && _id == $ref][0]`,
+    { type, ref },
+  );
+
+  if (!result) {
+    throw new Error(`Document not found: ${type} with id ${ref}`);
+  }
+
+  return result;
 }
 
 export type Category = {
-  title?: string;
-  icon?: Icon;
+  title: string;
+  icon: Icon;
   art: boolean;
 };
 

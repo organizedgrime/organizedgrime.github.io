@@ -1,6 +1,6 @@
 ---
 import { formatDate } from "../utils";
-import { type Icon, type Post, getReference } from "../utils/sanity";
+import { type Post, type Category, getReference } from "../utils/sanity";
 import GalleryItem from "./GalleryItem.astro";
 import IconComponent from "./Icon.astro";
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const categoryIcon = await getReference<Icon>({ type: post.category?._type, ref: post.category?._ref });
+const category: Category = await getReference<Category>({ type: "category", ref: post.category._ref });
 ---
 <div class="card">
   {
@@ -17,8 +17,6 @@ const categoryIcon = await getReference<Icon>({ type: post.category?._type, ref:
       <div class="card__cover--none" />
     )
   }
-  {post.icon && <IconComponent icon={post.icon} /> }
-  <!-- {categoryIcon && <IconComponent icon={categoryIcon} /> } -->
   <div class="card__container">
     <h3 class="card__title">
       <a
@@ -26,9 +24,11 @@ const categoryIcon = await getReference<Icon>({ type: post.category?._type, ref:
         href={`/post/${post.slug.current}`}
       >
         {post.title}
+        {post.icon && <IconComponent icon={post.icon} /> }
       </a>
     </h3>
-    <p class="card__excerpt">{post.category}</p>
+    <p class="card__excerpt">
+    {category && <IconComponent icon={category.icon} /> }</p>
     <p class="card__date">
       {formatDate(post.date)}
     </p>
