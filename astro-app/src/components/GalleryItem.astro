@@ -13,9 +13,9 @@ const { item } = Astro.props;
   { item &&
     (
     item._type ===
-   'sanity.imageAsset' ?
-    (<PhotoComponent photo={item} />) :
-    (<VideoComponent video={item} />)
+   "bunnyVideo" ?
+    (<VideoComponent video={item} />) :
+    (<PhotoComponent photo={item} />)
     )
   }
 </section>

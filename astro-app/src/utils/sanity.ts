@@ -33,7 +33,7 @@ export interface Icon {
 }
 
 export interface Video {
-  _type: "object";
+  _type: "bunnyVideo";
   id: string;
   vertical: boolean;
 }
