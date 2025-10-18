@@ -1,29 +1,24 @@
 ---
 import { formatDate } from "../utils";
-import { urlFor } from "../utils/image";
-import type { Post } from "../utils/sanity";
-import Icon from "./Icon.astro";
+import { type Icon, type Post, getReference } from "../utils/sanity";
+import GalleryItem from "./GalleryItem.astro";
+import IconComponent from "./Icon.astro";
 
 interface Props {
   post: Post;
 }
 
 const { post } = Astro.props;
+const categoryIcon = await getReference<Icon>({ type: post.category?._type, ref: post.category?._ref });
 ---
-
 <div class="card">
   {
-    post.photo ? (
-      <img
-        class="card__cover"
-        src={urlFor(post.photo).width(500).height(300).url()}
-        alt={post.photo.alt || ""}
-      />
-    ) : (
+  post.gallery?.length ? <GalleryItem item={post.gallery[0]} /> : (
       <div class="card__cover--none" />
     )
   }
-  {post.icon ? <Icon icon={post.icon} /> : <></>}
+  {post.icon && <IconComponent icon={post.icon} /> }
+  <!-- {categoryIcon && <IconComponent icon={categoryIcon} /> } -->
   <div class="card__container">
     <h3 class="card__title">
       <a

@@ -2,7 +2,6 @@
 import type { InferGetStaticParamsType } from "astro";
 import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../utils";
-import { urlFor } from "../../utils/image";
 import { getPost, getPosts } from "../../utils/sanity";
 import { marked } from 'marked';
 import Gallery from "../../components/Gallery.astro";
@@ -25,17 +24,6 @@ const htmlContent = marked.parse(post.body ?? "");
 
 <Layout title={post.title!}>
   <section class="post">
-    {
-      post.photo ? (
-        <img
-          class="post__cover"
-          src={urlFor(post.photo).url()}
-          alt={post.photo.alt}
-        />
-      ) : (
-        <div class="post__cover--none" />
-      )
-    }
     <div class="post__container">
       <h1 class="post__title">{post.title}</h1>
       <p class="post__excerpt">{post.excerpt}</p>

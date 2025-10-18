@@ -1,5 +1,6 @@
 ---
 import type {Icon} from "../utils/sanity"
+import { Image } from 'astro:assets';
 
 interface Props {
   icon: Icon
@@ -9,6 +10,5 @@ const { icon } = Astro.props;
 const imgSrc = `data:image/svg+xml,${icon.svg}`;
 ---
 <div>
-<img src={imgSrc} />
-<p>greg</p>
+  <Image src={imgSrc} alt={icon.name} inferSize={true} />
 </div>

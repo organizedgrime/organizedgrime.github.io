@@ -23,19 +23,19 @@ export const common: Record<Common, FieldDefinition> = {
     name: "date",
     title: "Date",
     type: "date",
-    validation: (Rule) => Rule.required(),
+    validation: (rule) => rule.required(),
   }),
   published: defineField({
     name: "published",
     title: "Published",
     type: "boolean",
-    validation: (Rule) => Rule.required(),
+    validation: (rule) => rule.required(),
   }),
   slug: defineField({
     name: "slug",
     title: "Slug",
     type: "slug",
-    validation: (Rule) => Rule.required(),
+    validation: (rule) => rule.required(),
     options: {
       source: "title",
       maxLength: 96,
@@ -84,7 +84,7 @@ export const common: Record<Common, FieldDefinition> = {
     name: "category",
     title: "category",
     type: "reference",
-    validation: (Rule) => Rule.required(),
+    validation: (rule) => rule.required(),
     to: [{ type: "category" }],
   }),
 };
