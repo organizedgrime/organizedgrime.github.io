@@ -1,7 +1,6 @@
 ---
-import { urlFor } from "../utils/image";
-import type {Gallery, Photo} from "../utils/sanity"
-import Video from "./Video.astro";
+import type {Gallery} from "../utils/sanity"
+import GalleryItem from "./GalleryItem.astro";
 
 interface Props {
   gallery?: Gallery
@@ -10,16 +9,8 @@ interface Props {
 const { gallery } = Astro.props;
 ---
 <section>
-
-  { gallery ?
-
-  (gallery.length ? gallery.map((media) =>  Object.hasOwn(media, "id") ? <Video video={media } /> :
-      <img
-        class="card__cover"
-        src={urlFor(media as Photo).width(500).height(300).url()}
-        alt={media.alt || ""}
-      />
-      ) : <p>idk how to display that<p />)
-: <p>No Gallery<p/>
-      }
+  {
+  gallery &&
+  Array.isArray(gallery) ? gallery.map((item) => <GalleryItem item={item} />) : <p>No Gallery<p/>
+  }
 </section>
