@@ -23,13 +23,17 @@ export type Category = {
   art: boolean;
 };
 
-export type Photo = ImageAsset & { alt?: string };
+export type Photo = ImageAsset & {
+  _type: "sanity.imageAsset";
+  alt?: string;
+};
 
 export interface Icon {
   svg: string;
 }
 
 export interface Video {
+  _type: "object";
   id: string;
   vertical: boolean;
 }

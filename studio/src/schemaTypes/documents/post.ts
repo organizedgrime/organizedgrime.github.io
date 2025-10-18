@@ -18,7 +18,7 @@ export default defineType({
     common.buttons,
     common.icon,
     common.date,
-    common.photo,
+    // common.photo,
     common.gallery,
     common.body,
   ],
