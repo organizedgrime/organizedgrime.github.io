@@ -1,6 +1,10 @@
 ---
 // https://docs.astro.build/en/guides/view-transitions/
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
+import { VisualEditing } from "@sanity/astro/visual-editing";
+//import { VisualEditing } from "@sanity/visual-editing/astro";
+const visualEditingEnabled =
+  import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
 
 interface Props {
   title: string;
@@ -26,7 +30,7 @@ const { title } = Astro.props;
     />
 
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <div class="container">
@@ -35,6 +39,7 @@ const { title } = Astro.props;
       </header>
       <main>
         <slot />
+        <VisualEditing enabled={visualEditingEnabled} zIndex={1000} />
       </main>
       <footer class="footer">
         <p class="footer__text">

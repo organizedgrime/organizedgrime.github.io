@@ -1,5 +1,5 @@
 import { defineType } from "sanity";
-import { preview } from "sanity-plugin-icon-picker";
+// import { preview } from "sanity-plugin-icon-picker";
 import { common } from "../fields";
 
 export default defineType({
@@ -9,7 +9,7 @@ export default defineType({
   fields: [
     common.title,
     common.slug,
-    common.icon,
+    // common.icon,
     {
       title: "Is this art?",
       name: "art",
@@ -18,7 +18,7 @@ export default defineType({
       validation: (rule) => rule.required(),
     },
   ],
-  preview: {
+  /* preview: {
     select: {
       title: "title",
       name: "icon.name",
@@ -31,5 +31,5 @@ export default defineType({
         media: preview({ ...icon }),
       };
     },
-  },
+  }, */
 });

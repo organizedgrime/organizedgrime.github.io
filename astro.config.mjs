@@ -2,33 +2,30 @@
 // https://docs.astro.build/en/guides/configuring-astro/#environment-variables
 import { loadEnv } from "vite";
 
-const {
-  PUBLIC_SANITY_STUDIO_PROJECT_ID,
-  PUBLIC_SANITY_STUDIO_DATASET,
-  PUBLIC_SANITY_PROJECT_ID,
-  PUBLIC_SANITY_DATASET,
-} = loadEnv(import.meta.env.MODE, process.cwd(), "");
-
-import { defineConfig } from "astro/config";
-
-// Different environments use different variables
-const projectId = PUBLIC_SANITY_STUDIO_PROJECT_ID || PUBLIC_SANITY_PROJECT_ID;
-const dataset = PUBLIC_SANITY_STUDIO_DATASET || PUBLIC_SANITY_DATASET;
+const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
+  import.meta.env.MODE,
+  process.cwd(),
+  "",
+);
 
 import react from "@astrojs/react";
 import vercel from "@astrojs/vercel/serverless";
 import sanity from "@sanity/astro";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   integrations: [
     sanity({
-      projectId,
-      dataset,
+      projectId: PUBLIC_SANITY_PROJECT_ID,
+      dataset: PUBLIC_SANITY_DATASET,
       useCdn: false,
-      apiVersion: "2025-10-05", // Set to date of setup to use the latest API version
+      apiVersion: "2025-10-20", // Set to date of setup to use the latest API version
       studioBasePath: "/admin",
+      stega: {
+        studioUrl: "/admin",
+      },
     }),
     react(), // Required for Sanity Studio
   ],

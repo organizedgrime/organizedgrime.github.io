@@ -1,20 +1,22 @@
 import { sanityClient } from "sanity:client";
 import type { ImageAsset, Reference, Slug } from "@sanity/types";
 import groq from "groq";
+import { loadQuery } from "./load-query";
 
 export async function getPosts(): Promise<Post[]> {
-  return await sanityClient.fetch(
-    groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`,
-  );
+  const { data: posts } = await loadQuery<Array<Post>>({
+    query: `*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`,
+  });
+  return posts;
 }
 
 export async function getPost(slug: string): Promise<Post> {
-  const post = await sanityClient.fetch(
-    groq`*[_type == "post" && defined(slug.current) && slug.current == $slug][0]`,
-    {
+  const { data: post } = await loadQuery<Post>({
+    query: `*[_type == "post" && defined(slug.current) && slug.current == $slug][0]`,
+    params: {
       slug,
     },
-  );
+  });
 
   if (!post) {
     throw new Error(`Document not found: \`post\` with slug ${slug}`);
@@ -24,9 +26,10 @@ export async function getPost(slug: string): Promise<Post> {
 }
 
 export async function getCategories(): Promise<Category[]> {
-  return await sanityClient.fetch(
-    groq`*[_type == "category" && defined(slug.current)] | order(slug.current desc)`,
-  );
+  const { data: categories } = await loadQuery<Category[]>({
+    query: `*[_type == "category" && defined(slug.current)] | order(slug.current desc)`,
+  });
+  return categories;
 }
 
 export async function getReference<T>({
@@ -36,16 +39,16 @@ export async function getReference<T>({
   type: string;
   ref: string;
 }): Promise<T> {
-  const result = await sanityClient.fetch<T | null>(
-    groq`*[_type == $type && _id == $ref][0]`,
-    { type, ref },
-  );
+  const { data } = await loadQuery<T | null>({
+    query: `*[_type == $type && _id == $ref][0]`,
+    params: { type, ref },
+  });
 
-  if (!result) {
+  if (!data) {
     throw new Error(`Document not found: ${type} with id ${ref}`);
   }
 
-  return result;
+  return data;
 }
 
 export type Category = {
