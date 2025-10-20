@@ -27,11 +27,11 @@ const category: Category = await getReference<Category>({
     <h3 class="card__title">
       <a class="card__link" href={`/post/${post.slug.current}`}>
         {post.title}
-        <!-- {post.icon && <IconComponent icon={post.icon} />} -->
+        {post.icon && <IconComponent icon={post.icon} />}
       </a>
     </h3>
     <p class="card__excerpt">
-      <!-- {category && <IconComponent icon={category.icon} />} -->
+      {category && <IconComponent icon={category.icon} />}
     </p>
     <p class="card__date">
       {formatDate(post.date)}

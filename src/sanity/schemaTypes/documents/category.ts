@@ -1,23 +1,23 @@
-import { defineType } from "sanity";
+import { defineField, defineType } from "sanity";
 // import { preview } from "sanity-plugin-icon-picker";
-import { common } from "../fields";
+import { Common, mapDefinition } from "../fields";
 
 export default defineType({
   name: "category",
   title: "Category",
   type: "document",
   fields: [
-    common.title,
-    common.slug,
-    // common.icon,
-    {
+    Common.title,
+    Common.slug,
+    Common.icon,
+    defineField({
       title: "Is this art?",
       name: "art",
       type: "boolean",
       initialValue: false,
       validation: (rule) => rule.required(),
-    },
-  ],
+    }),
+  ].map(mapDefinition),
   /* preview: {
     select: {
       title: "title",

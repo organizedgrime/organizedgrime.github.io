@@ -1,14 +1,25 @@
 ---
-import type {Icon} from "../utils/sanity"
-import { Image } from 'astro:assets';
+import type { Icon } from "../utils/sanity";
+import { Image } from "astro:assets";
 
 interface Props {
-  icon: Icon
-};
+  icon: Icon;
+}
 
 const { icon } = Astro.props;
-const imgSrc = `data:image/svg+xml,${icon.svg}`;
+
+const valid =
+  icon && icon.metadata && typeof icon.metadata.inlineSvg === "string";
 ---
+
 <div>
-  <Image src={imgSrc} alt={icon.name} inferSize={true} />
+  {
+    valid && (
+      <Image
+        src={`data:image/svg+xml,${icon.metadata.inlineSvg}`}
+        alt={icon.icon}
+        inferSize={true}
+      />
+    )
+  }
 </div>

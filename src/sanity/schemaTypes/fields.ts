@@ -7,7 +7,7 @@ export enum Common {
   slug = "slug",
   photo = "photo",
   gallery = "gallery",
-  // icon = "icon",
+  icon = "icon",
   buttons = "buttons",
   body = "body",
   category = "category",
@@ -61,14 +61,11 @@ export const common: Record<Common, FieldDefinition> = {
       },
     },
   }),
-  // icon: defineField({
-  //   name: "icon",
-  //   title: "Icon",
-  //   type: "iconPicker",
-  //   options: {
-  //     storeSvg: true,
-  //   },
-  // }),
+  icon: defineField({
+    type: "icon.manager",
+    name: "icon",
+    title: "Icon",
+  }),
   buttons: defineField({
     name: "buttons",
     title: "Buttons",
@@ -88,3 +85,9 @@ export const common: Record<Common, FieldDefinition> = {
     to: [{ type: "category" }],
   }),
 };
+
+export function mapDefinition(
+  value: Common | FieldDefinition,
+): FieldDefinition {
+  return typeof value === "string" ? common[value] : value;
+}

@@ -2,6 +2,7 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
+import { IconManager } from "sanity-plugin-icon-manager";
 import { markdownSchema } from "sanity-plugin-markdown";
 import { resolve } from "./src/sanity/resolve";
 import { schemaTypes } from "./src/sanity/schemaTypes";
@@ -15,7 +16,9 @@ export default defineConfig({
     structureTool(),
     visionTool(),
     markdownSchema(),
-    // iconPicker(),
+    IconManager({
+      inlineSvg: true,
+    }),
     presentationTool({
       resolve,
       previewUrl: location.origin,

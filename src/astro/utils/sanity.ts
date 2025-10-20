@@ -1,6 +1,4 @@
-import { sanityClient } from "sanity:client";
 import type { ImageAsset, Reference, Slug } from "@sanity/types";
-import groq from "groq";
 import { loadQuery } from "./load-query";
 
 export async function getPosts(): Promise<Post[]> {
@@ -63,8 +61,11 @@ export type Photo = ImageAsset & {
 };
 
 export interface Icon {
-  svg: string;
-  name: string;
+  _type: "icon.manager";
+  icon: string;
+  metadata: {
+    inlineSvg: string;
+  };
 }
 
 export interface Video {
