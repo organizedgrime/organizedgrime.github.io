@@ -9,13 +9,14 @@ const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } = loadEnv(
 );
 
 import react from "@astrojs/react";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import sanity from "@sanity/astro";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
+  srcDir: "./src/astro",
   integrations: [
     sanity({
       projectId: PUBLIC_SANITY_PROJECT_ID,

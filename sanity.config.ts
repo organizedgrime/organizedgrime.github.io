@@ -2,10 +2,9 @@ import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
-// import { iconPicker } from "sanity-plugin-icon-picker";
 import { markdownSchema } from "sanity-plugin-markdown";
-import { resolve } from "./src/resolve";
-import { schemaTypes } from "./src/schemaTypes";
+import { resolve } from "./src/sanity/resolve";
+import { schemaTypes } from "./src/sanity/schemaTypes";
 
 export default defineConfig({
   name: "recursivepaws",
