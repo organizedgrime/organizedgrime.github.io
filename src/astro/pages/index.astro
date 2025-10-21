@@ -32,8 +32,8 @@ const posts = await getPosts();
 </script>
 
 <Layout title="Welcome to Astro.">
-  <ModeToggle client:load />
-  <section>
+  <section class="flex flex-col gap-6">
+    <ModeToggle client:load />
     {posts.length ? posts.map((post) => <Card post={post} />) : <Welcome />}
   </section>
 </Layout>
