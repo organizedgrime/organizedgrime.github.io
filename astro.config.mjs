@@ -13,10 +13,13 @@ import vercel from "@astrojs/vercel";
 import sanity from "@sanity/astro";
 import { defineConfig } from "astro/config";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   srcDir: "./src/astro",
+
   integrations: [
     sanity({
       projectId: PUBLIC_SANITY_PROJECT_ID,
@@ -30,7 +33,12 @@ export default defineConfig({
     }),
     react(), // Required for Sanity Studio
   ],
+
   adapter: vercel({
     runtime: "nodejs20.x",
   }),
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
