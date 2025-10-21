@@ -12,7 +12,7 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@/components",
+    "components": "@/astro/components",
     "utils": "@/lib/utils",
     "ui": "@/astro/components/ui",
     "lib": "@/lib",
