@@ -49,17 +49,7 @@ export const common: Record<Common, FieldDefinition> = {
   gallery: defineField({
     name: "gallery",
     title: "Gallery",
-    type: "array",
-    of: [{ type: "captionedImage" }, { type: "bunnyVideo" }],
-    options: {
-      insertMenu: {
-        showIcons: false,
-        groups: [
-          { name: "image", title: "Image", of: ["captionedImage"] },
-          { name: "video", title: "Video", of: ["bunnyVideo"] },
-        ],
-      },
-    },
+    type: "gallery",
   }),
   icon: defineField({
     type: "icon.manager",

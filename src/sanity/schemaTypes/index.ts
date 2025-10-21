@@ -4,6 +4,7 @@ import blockContent from "./objects/blockContent";
 import bunnyVideo from "./objects/bunnyVideo";
 import captionedImage from "./objects/captionedImage";
 import iconButton from "./objects/iconButton";
+import gallery from "./objects/gallery";
 
 export const schemaTypes = [
   post,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   captionedImage,
   iconButton,
   bunnyVideo,
+  gallery,
 ];
