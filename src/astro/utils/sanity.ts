@@ -50,7 +50,9 @@ export async function getReference<T>({
 }
 
 export type Category = {
+  _id: string;
   title: string;
+  slug: Slug;
   icon: Icon;
   art: boolean;
 };

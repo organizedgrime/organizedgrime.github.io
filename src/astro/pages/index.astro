@@ -1,13 +1,11 @@
 ---
-import Card from "../components/Card.astro";
-import Welcome from "../components/Welcome.astro";
+import { CategoryTabs } from "../components/CategoryTabs";
 import Layout from "../layouts/Layout.astro";
-import { getPosts } from "../utils/sanity";
+import { getPosts, getCategories } from "../utils/sanity";
 const posts = await getPosts();
+const categories = await getCategories();
 ---
 
 <Layout title="Welcome to Astro.">
-  <section class="flex flex-col gap-6">
-    {posts.length ? posts.map((post) => <Card post={post} />) : <Welcome />}
-  </section>
+  <CategoryTabs posts={posts} categories={categories} client:load />
 </Layout>
