@@ -1,7 +1,7 @@
-import { Card, Stack, Spinner, Select, Text } from "@sanity/ui";
-import { useState, useEffect, useMemo } from "react";
-import { type ObjectInputProps, set } from "sanity";
+import { Card, Select, Spinner, Stack, Text } from "@sanity/ui";
 import { randomKey } from "@sanity/util/content";
+import { useEffect, useState } from "react";
+import { type ObjectInputProps, set } from "sanity";
 
 const cdnHostname = import.meta.env.PUBLIC_BUNNY_CDN_HOSTNAME;
 
@@ -27,14 +27,6 @@ export function BunnyVideoInput(props: ObjectInputProps) {
   const [videos, setVideos] = useState<BunnyVideo[]>([]);
   const [loading, setLoading] = useState(true);
 
-  if (!cdnHostname) {
-    return (
-      <Card padding={4}>
-        <Text>Error: Unknown CDN hostname</Text>
-      </Card>
-    );
-  }
-
   useEffect(() => {
     fetch("/api/bunny-videos.json")
       .then((res) => res.json())
@@ -42,6 +34,14 @@ export function BunnyVideoInput(props: ObjectInputProps) {
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
   }, []);
+
+  if (!cdnHostname) {
+    return (
+      <Card padding={4}>
+        <Text>Error: Unknown CDN hostname</Text>
+      </Card>
+    );
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const video = videos.find((v) => v.guid === e.target.value);

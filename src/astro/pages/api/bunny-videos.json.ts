@@ -22,7 +22,7 @@ export const GET: APIRoute = async () => {
     return new Response(JSON.stringify(data), {
       headers: { "Content-Type": "application/json" },
     });
-  } catch (error) {
+  } catch {
     return new Response(JSON.stringify({ error: "Failed to fetch videos" }), {
       status: 500,
       headers: { "Content-Type": "application/json" },

@@ -1,5 +1,6 @@
-import { BunnyVideoInput } from "@/sanity/components/bunnyVideo";
 import { defineField, defineType } from "sanity";
+import { BunnyVideoInput } from "@/sanity/components/bunnyVideo";
+
 const cdnHostname = import.meta.env.PUBLIC_BUNNY_CDN_HOSTNAME;
 
 export default defineType({
