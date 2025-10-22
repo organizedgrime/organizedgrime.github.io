@@ -27,7 +27,7 @@ const category: Category = await getReference<Category>({
 <CardComponent className="w-full max-w-sm">
   <CardHeader>
     <CardTitle>
-      {post.title}
+      <a href={`post/${post.slug.current}`}>{post.title}</a>
     </CardTitle>
     <CardAction>
       <Badge className="gap-2"

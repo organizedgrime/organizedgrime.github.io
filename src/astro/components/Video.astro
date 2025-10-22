@@ -4,13 +4,13 @@ interface Props {
   video: Video;
 }
 const { video } = Astro.props;
+const padding = Math.round((video.height / video.width) * 10000) / 100;
 ---
 
-<div
-  style=`position:relative;padding-top:${video.vertical ? "177.77%" : "56.25%" };`
->
+<div style=`position:relative;padding-top:${padding}%;`>
   <iframe
-    src=`https://player.mediadelivery.net/embed/${import.meta.env.PUBLIC_BUNNY_LIBRARY_ID}/${video.id}?autoplay=true&loop=true&muted=false&preload=true&responsive=true`
+    src=`https://player.mediadelivery.net/embed/${import.meta.env.PUBLIC_BUNNY_LIBRARY_ID}/${video.videoId}?autoplay=true&loop=true&muted=false&preload=true&responsive=true`
+    title={video.title}
     loading="lazy"
     style="border:0;position:absolute;top:0;height:100%;width:100%;"
     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"

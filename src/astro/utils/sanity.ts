@@ -70,8 +70,11 @@ export interface Icon {
 
 export interface Video {
   _type: "bunnyVideo";
-  id: string;
-  vertical: boolean;
+  videoId: string;
+  title: string;
+  description: string;
+  width: number;
+  height: number;
 }
 
 export type Gallery = Array<Photo | Video>;

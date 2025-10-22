@@ -1,7 +1,5 @@
-// lib/generateSignedUrl.ts
-// import crypto from "crypto";
-//
+const bunnyLibraryId = import.meta.env.PUBLIC_BUNNY_LIBRARY_ID;
 export const generateSignedUrl = (videoId: string) => {
-  const baseUrl = `https://iframe.mediadelivery.net/play/${import.meta.env.PUBLIC_BUNNY_LIBRARY_ID}/${videoId}`;
+  const baseUrl = `https://iframe.mediadelivery.net/play/${bunnyLibraryId}/${videoId}`;
   return `${baseUrl}?autoplay=true&loop=true&muted=false&preload=true&responsive=true`;
 };
