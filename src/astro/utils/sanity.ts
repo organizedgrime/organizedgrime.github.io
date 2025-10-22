@@ -1,4 +1,4 @@
-import type { ImageAsset, Reference, Slug } from "@sanity/types";
+import type { Asset, Reference, Slug } from "@sanity/types";
 import { loadQuery } from "./load-query";
 
 export async function getPosts(): Promise<Post[]> {
@@ -55,7 +55,7 @@ export type Category = {
   art: boolean;
 };
 
-export interface Photo {
+export interface Photo extends Asset {
   _type: "captionedImage";
   title?: string;
   description?: string;

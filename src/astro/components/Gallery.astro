@@ -3,21 +3,12 @@ import type { Gallery } from "../utils/sanity";
 import GalleryItem from "./GalleryItem.astro";
 
 interface Props {
-  gallery?: Gallery;
+  gallery: Gallery;
 }
 
 const { gallery } = Astro.props;
 ---
 
-<section>
-  {
-    gallery && Array.isArray(gallery) ? (
-      gallery.map((item) => <GalleryItem item={item} />)
-    ) : (
-      <p>
-        No Gallery
-        <p />
-      </p>
-    )
-  }
+<section class="flex flex-col gap-6">
+  {gallery.map((item) => <GalleryItem item={item} />)}
 </section>
