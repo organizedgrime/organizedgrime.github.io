@@ -11,6 +11,6 @@ const { photo } = Astro.props;
 <Image
   class="card__cover"
   src={urlFor(photo).width(500).height(300).url()}
-  alt={photo.alt || ""}
+  alt={photo.description || ""}
   inferSize={true}
 />

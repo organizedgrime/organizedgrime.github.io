@@ -55,10 +55,11 @@ export type Category = {
   art: boolean;
 };
 
-export type Photo = ImageAsset & {
-  _type: "sanity.imageAsset";
-  alt?: string;
-};
+export interface Photo {
+  _type: "captionedImage";
+  title?: string;
+  description?: string;
+}
 
 export interface Icon {
   _type: "icon.manager";

@@ -9,8 +9,13 @@ export default defineType({
   },
   fields: [
     defineField({
-      name: "alt",
-      title: "Alternative text",
+      name: "title",
+      title: "Title",
+      type: "string",
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
       type: "string",
     }),
   ],
