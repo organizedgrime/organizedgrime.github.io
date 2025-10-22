@@ -13,10 +13,10 @@
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@/astro/components",
-    "utils": "@/lib/utils",
+    "utils": "@/astro/lib/utils",
     "ui": "@/astro/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "lib": "@/astro/lib",
+    "hooks": "@/astro/hooks"
   },
   "registries": {}
 }
