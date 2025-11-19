@@ -14,17 +14,20 @@ export default defineType({
   fields: [
     common.title,
     common.slug,
-    common.category,
+    common.tags,
+    common.content,
     common.buttons,
     common.icon,
     common.date,
+    // deprecated
     common.gallery,
     common.body,
+    common.category,
   ],
   preview: {
     select: {
       title: "title",
-      media: "photo",
+      // media: "photo",
     },
   },
 });

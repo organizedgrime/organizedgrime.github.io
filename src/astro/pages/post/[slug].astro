@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../utils";
 import { getPost, getPosts } from "../../utils/sanity";
 import { marked } from "marked";
-import Gallery from "../../components/Gallery.astro";
+import  Gallery  from "../../components/Gallery.astro";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -31,7 +31,7 @@ const htmlContent = marked.parse(post.body ?? "");
         {formatDate(post.date)}
       </p>
       <div class="post__content">
-        {post.gallery && <Gallery gallery={post.gallery} />}
+        <Gallery gallery={post.gallery} />
         <div class="post__content" set:html={htmlContent} />
       </div>
     </div>
