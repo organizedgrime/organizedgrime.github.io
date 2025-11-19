@@ -31,7 +31,7 @@ const htmlContent = marked.parse(post.body ?? "");
         {formatDate(post.date)}
       </p>
       <div class="post__content">
-        <Gallery gallery={post.gallery} />
+        { post.gallery && <Gallery gallery={post.gallery} /> }
         <div class="post__content" set:html={htmlContent} />
       </div>
     </div>
