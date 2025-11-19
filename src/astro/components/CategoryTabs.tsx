@@ -11,7 +11,9 @@ export function CategoryTabs({
   const postsByCategory: Record<string, Post[]> = Object.fromEntries(
     categories.map((category) => [
       category.slug.current,
-      posts.filter((post) => post.category._ref === category._id),
+      posts.filter((post) =>
+        post.tags.map((t) => t._ref).includes(category._id),
+      ),
     ]),
   );
 

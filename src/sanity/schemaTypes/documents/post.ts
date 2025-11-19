@@ -1,4 +1,5 @@
 import { defineType } from "sanity";
+import { mediaPreview } from "sanity-plugin-icon-manager";
 import { common } from "../fields";
 
 /**
@@ -15,19 +16,22 @@ export default defineType({
     common.title,
     common.slug,
     common.tags,
-    common.content,
     common.buttons,
     common.icon,
     common.date,
-    // deprecated
     common.gallery,
     common.body,
-    common.category,
   ],
   preview: {
     select: {
       title: "title",
-      // media: "photo",
+      icon: "icon",
+    },
+    prepare({ icon, title }) {
+      return {
+        title: title,
+        media: mediaPreview(icon),
+      };
     },
   },
 });

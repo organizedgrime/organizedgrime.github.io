@@ -85,7 +85,7 @@ export type Gallery = Array<Photo | Video>;
 export interface Post {
   _type: "post";
   _createdAt: string;
-  category: Reference;
+  tags: Reference[];
   icon?: Icon;
   gallery?: Gallery;
   date: string;

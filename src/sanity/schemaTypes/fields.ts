@@ -10,9 +10,7 @@ export enum Common {
   icon = "icon",
   buttons = "buttons",
   body = "body",
-  category = "category",
   preview = "preview",
-  content = "content",
   tags = "tags",
 }
 
@@ -70,24 +68,12 @@ export const common: Record<Common, FieldDefinition> = {
     title: "Body",
     type: "markdown",
   }),
-  category: defineField({
-    name: "category",
-    title: "Category",
-    type: "reference",
-    validation: (rule) => rule.required(),
-    to: [{ type: "category" }],
-  }),
   preview: defineField({
     name: "preview",
     title: "Preview",
     type: "reference",
     validation: (rule) => rule.required(),
     to: [{ type: "captionedImage" }],
-  }),
-  content: defineField({
-    name: "content",
-    title: "Callery",
-    type: "content",
   }),
   tags: defineField({
     name: "tags",

@@ -1,5 +1,5 @@
 import { defineField, defineType } from "sanity";
-// import { preview } from "sanity-plugin-icon-picker";
+import { mediaPreview } from "sanity-plugin-icon-manager";
 import { Common, mapDefinition } from "../fields";
 
 export default defineType({
@@ -18,18 +18,17 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
   ].map(mapDefinition),
-  /* preview: {
+  preview: {
     select: {
       title: "title",
-      name: "icon.name",
-      provider: "icon.provider",
+      icon: "icon",
     },
-    prepare(icon) {
+    prepare({ icon, title }) {
       return {
-        title: icon.title,
+        title: title,
         subtitle: icon.name,
-        media: preview({ ...icon }),
+        media: mediaPreview(icon),
       };
     },
-  }, */
+  },
 });
