@@ -5,6 +5,7 @@ import bunnyVideo from "./objects/bunnyVideo";
 import captionedImage from "./objects/captionedImage";
 import gallery from "./objects/gallery";
 import iconButton from "./objects/iconButton";
+import content from "./objects/content";
 
 export const schemaTypes = [
   post,
@@ -14,4 +15,5 @@ export const schemaTypes = [
   iconButton,
   bunnyVideo,
   gallery,
+  content,
 ];

@@ -49,8 +49,28 @@ export async function getReference<T>({
   return data;
 }
 
+export async function getPostsWithTag<T>({
+  tag,
+}: {
+  tag: string;
+  // refs: string[];
+}): Promise<T[]> {
+  const { data } = await loadQuery<T[] | null>({
+    query: `*[_type == "post" && references($tag) in tags[]._ref ]`,
+    params: { tag },
+  });
+
+  if (!data) {
+    throw new Error(`Document not found: posts with tag ${tag}`);
+  }
+
+  return data;
+}
+
 export type Category = {
+  _id: string;
   title: string;
+  slug: Slug;
   icon: Icon;
   art: boolean;
 };
@@ -59,6 +79,7 @@ export interface Photo extends Asset {
   _type: "captionedImage";
   title?: string;
   description?: string;
+  preview?: boolean;
 }
 
 export interface Icon {
@@ -76,14 +97,16 @@ export interface Video {
   description: string;
   width: number;
   height: number;
+  preview?: boolean;
 }
 
 export type Gallery = Array<Photo | Video>;
 
 export interface Post {
+  _id: string;
   _type: "post";
   _createdAt: string;
-  category: Reference;
+  tags: Reference[];
   icon?: Icon;
   gallery?: Gallery;
   date: string;

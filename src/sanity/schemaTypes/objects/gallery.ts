@@ -8,4 +8,22 @@ export default defineType({
   options: {
     layout: "grid",
   },
+  validation: (Rule) =>
+    Rule.custom((items) => {
+      if (!items) return true;
+
+      const previewItems = items.filter(
+        (item) =>
+          item &&
+          typeof item === "object" &&
+          "preview" in item &&
+          item.preview === true,
+      );
+
+      if (previewItems.length > 1) {
+        return "Only one item can be marked as preview";
+      }
+
+      return true;
+    }),
 });

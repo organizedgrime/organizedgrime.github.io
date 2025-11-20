@@ -19,7 +19,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   output: "server",
   srcDir: "./src/astro",
-
   integrations: [
     sanity({
       projectId: PUBLIC_SANITY_PROJECT_ID,
@@ -31,7 +30,9 @@ export default defineConfig({
         studioUrl: "/admin",
       },
     }),
-    react(), // Required for Sanity Studio
+    react({
+      experimentalReactChildren: true,
+    }), // Required for Sanity Studio
   ],
 
   adapter: vercel({
@@ -42,3 +43,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 });
+
+

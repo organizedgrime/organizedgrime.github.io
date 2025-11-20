@@ -1,4 +1,4 @@
-import { Card, Select, Spinner, Stack, Text } from "@sanity/ui";
+import { Card, Select, Spinner, Stack, Switch, Text } from "@sanity/ui";
 import { randomKey } from "@sanity/util/content";
 import { useEffect, useState } from "react";
 import { type ObjectInputProps, set } from "sanity";
@@ -20,6 +20,7 @@ interface BunnyVideo {
   width: number;
   height: number;
   thumbnailFileName: string;
+  preview: boolean;
 }
 
 export function BunnyVideoInput(props: ObjectInputProps) {
@@ -58,6 +59,25 @@ export function BunnyVideoInput(props: ObjectInputProps) {
           width: video.width,
           height: video.height,
           thumbnailFileName: video.thumbnailFileName,
+          preview: video.preview || false,
+        }),
+      );
+    }
+  };
+
+  const handlePreviewToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      onChange(
+        set({
+          ...value,
+          preview: true,
+        }),
+      );
+    } else {
+      onChange(
+        set({
+          ...value,
+          preview: false,
         }),
       );
     }
@@ -82,11 +102,22 @@ export function BunnyVideoInput(props: ObjectInputProps) {
         ))}
       </Select>
       {value?.videoId && value?.thumbnailFileName && (
-        <img
-          src={`https://${cdnHostname}/${value.videoId}/${value.thumbnailFileName}`}
-          alt="Preview"
-          style={{ maxWidth: 300, borderRadius: 4 }}
-        />
+        <>
+          <Card padding={3} border>
+            <Stack space={3}>
+              <Switch
+                checked={value?.preview || false}
+                onChange={handlePreviewToggle}
+              />
+              <Text size={1}>Set as preview video</Text>
+            </Stack>
+          </Card>
+          <img
+            src={`https://${cdnHostname}/${value.videoId}/${value.thumbnailFileName}`}
+            alt="Preview"
+            style={{ maxWidth: 300, borderRadius: 4 }}
+          />
+        </>
       )}
     </Stack>
   );
