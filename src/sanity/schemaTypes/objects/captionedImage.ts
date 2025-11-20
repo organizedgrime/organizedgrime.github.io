@@ -18,5 +18,11 @@ export default defineType({
       title: "Description",
       type: "string",
     }),
+    defineField({
+      name: "preview",
+      title: "Preview?",
+      type: "boolean",
+      initialValue: false,
+    }),
   ],
 });

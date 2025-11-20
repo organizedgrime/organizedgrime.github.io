@@ -12,7 +12,7 @@ export function Video({ video }: { video: SanityVideo }) {
         }}
       >
         <iframe
-          src={`https://player.mediadelivery.net/embed/${import.meta.env.PUBLIC_BUNNY_LIBRARY_ID}/${video.videoId}?autoplay=true&loop=true&muted=false&preload=true&responsive=true`}
+          src={`https://player.mediadelivery.net/embed/${import.meta.env.PUBLIC_BUNNY_LIBRARY_ID}/${video.videoId}?autoplay=false&loop=true&muted=false&preload=true&responsive=true`}
           title={video.title}
           loading="lazy"
           style={{
@@ -22,7 +22,7 @@ export function Video({ video }: { video: SanityVideo }) {
             height: "100%",
             width: "100%",
           }}
-          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+          allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;"
           allowFullScreen={true}
         ></iframe>
       </div>

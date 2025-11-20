@@ -1,4 +1,5 @@
 import type { Category, Post } from "../utils/sanity";
+import { Card } from "./Card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 export function CategoryTabs({
@@ -30,7 +31,7 @@ export function CategoryTabs({
         <TabsContent key={category._id} value={category.slug.current}>
           <section className="flex flex-col gap-6">
             {postsByCategory[category.slug.current].map((post) => (
-              <p key={post.slug.current}>{post.title}</p>
+              <Card key={post._id} post={post} />
             ))}
           </section>
         </TabsContent>
