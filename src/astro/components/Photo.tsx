@@ -1,4 +1,4 @@
-import { ImageZoom } from "@/components/ui/shadcn-io/image-zoom";
+import { ImageZoom } from "@/astro/components/ui/image-zoom";
 import { urlFor } from "../utils/image";
 import type { Photo as SanityPhoto } from "../utils/sanity";
 
