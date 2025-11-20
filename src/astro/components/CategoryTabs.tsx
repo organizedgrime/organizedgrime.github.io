@@ -19,7 +19,7 @@ export function CategoryTabs({
   );
 
   return (
-    <Tabs defaultValue="origami" className="w-[400px]">
+    <Tabs defaultValue="origami" className="">
       <TabsList>
         {categories.map((category) => (
           <TabsTrigger key={category._id} value={category.slug.current}>

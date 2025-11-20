@@ -35,7 +35,7 @@ export function Card({ post }: { post: Post }) {
   }, [post.tags, categories.length]);
 
   return (
-    <CardComponent className="w-full max-w-sm">
+    <CardComponent className="w-full max-w-md">
       <CardHeader>
         <CardTitle>
           <a href={`post/${post.slug.current}`}>{post.title}</a>
