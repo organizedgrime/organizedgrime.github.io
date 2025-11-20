@@ -1,17 +1,17 @@
+import { useEffect, useState } from "react";
 import { formatDate } from "../utils";
-import { Badge } from "./ui/badge";
-import {
-  Card as CardComponent,
-  CardTitle,
-  CardHeader,
-  CardDescription,
-  CardAction,
-  CardContent,
-} from "./ui/card";
-import { type Post, type Category, getReference } from "../utils/sanity";
+import { type Category, getReference, type Post } from "../utils/sanity";
 import { GalleryItem } from "./GalleryItem";
 import { Icon } from "./Icon";
-import { useEffect, useState } from "react";
+import { Badge } from "./ui/badge";
+import {
+  CardAction,
+  Card as CardComponent,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 export function Card({ post }: { post: Post }) {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -50,19 +50,17 @@ export function Card({ post }: { post: Post }) {
         </CardAction>
         <CardDescription>{formatDate(post.date)}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="flex flex-col gap-6">
-          {post.gallery?.length ? (
-            <GalleryItem
-              item={
-                post.gallery.find((item) => item.preview === true) ||
-                post.gallery[0]
-              }
-            />
-          ) : (
-            <div className="card__cover--none" />
-          )}
-        </div>
+      <CardContent style={{ position: "relative" }} className="w-full">
+        {post.gallery?.length ? (
+          <GalleryItem
+            item={
+              post.gallery.find((item) => item.preview === true) ||
+              post.gallery[0]
+            }
+          />
+        ) : (
+          <div className="card__cover--none" />
+        )}
       </CardContent>
     </CardComponent>
   );
