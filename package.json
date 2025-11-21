@@ -23,6 +23,7 @@
     "@sanity/ui": "^3.1.11",
     "@sanity/util": "^4.11.0",
     "@sanity/vision": "^4.10.3",
+    "@solely/simple-fm": "^1.7.2",
     "@tailwindcss/vite": "^4.1.15",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
