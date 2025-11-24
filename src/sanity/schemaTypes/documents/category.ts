@@ -14,7 +14,7 @@ export default defineType({
       title: "Is this art?",
       name: "art",
       type: "boolean",
-      initialValue: false,
+      options: { layout: "checkbox" },
       validation: (rule) => rule.required(),
     }),
   ].map(mapDefinition),
@@ -30,5 +30,8 @@ export default defineType({
         media: mediaPreview(icon),
       };
     },
+  },
+  initialValue: {
+    art: false,
   },
 });

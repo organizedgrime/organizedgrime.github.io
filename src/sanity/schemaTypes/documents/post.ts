@@ -15,8 +15,9 @@ export default defineType({
   fields: [
     common.title,
     common.slug,
+    common.nsfw,
     common.tags,
-    common.buttons,
+    common.links,
     common.icon,
     common.date,
     common.gallery,
@@ -33,5 +34,8 @@ export default defineType({
         media: mediaPreview(icon),
       };
     },
+  },
+  initialValue: {
+    nsfw: false,
   },
 });

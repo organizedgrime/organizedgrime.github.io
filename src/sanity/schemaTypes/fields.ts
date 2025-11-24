@@ -3,12 +3,12 @@ import { defineField, type FieldDefinition } from "sanity";
 export enum Common {
   title = "title",
   date = "date",
-  published = "published",
   slug = "slug",
   photo = "photo",
   gallery = "gallery",
   icon = "icon",
-  buttons = "buttons",
+  links = "links",
+  nsfw = "nsfw",
   body = "body",
   preview = "preview",
   tags = "tags",
@@ -26,12 +26,6 @@ export const common: Record<Common, FieldDefinition> = {
     type: "date",
     validation: (rule) => rule.required(),
   }),
-  published: defineField({
-    name: "published",
-    title: "Published",
-    type: "boolean",
-    validation: (rule) => rule.required(),
-  }),
   slug: defineField({
     name: "slug",
     title: "Slug",
@@ -41,6 +35,13 @@ export const common: Record<Common, FieldDefinition> = {
       source: "title",
       maxLength: 96,
     },
+  }),
+  nsfw: defineField({
+    name: "nsfw",
+    title: "NSFW",
+    type: "boolean",
+    options: { layout: "checkbox" },
+    validation: (rule) => rule.required(),
   }),
   photo: defineField({
     name: "photo",
@@ -57,11 +58,11 @@ export const common: Record<Common, FieldDefinition> = {
     name: "icon",
     title: "Icon",
   }),
-  buttons: defineField({
-    name: "buttons",
-    title: "Buttons",
+  links: defineField({
+    name: "links",
+    title: "Links",
     type: "array",
-    of: [{ type: "iconButton" }],
+    of: [{ type: "url" }],
   }),
   body: defineField({
     name: "body",

@@ -1,4 +1,12 @@
-import { Card, Select, Spinner, Stack, Switch, Text } from "@sanity/ui";
+import {
+  Card,
+  Checkbox,
+  Select,
+  Spinner,
+  Stack,
+  Switch,
+  Text,
+} from "@sanity/ui";
 import { randomKey } from "@sanity/util/content";
 import { useEffect, useState } from "react";
 import { type ObjectInputProps, set } from "sanity";
@@ -105,7 +113,7 @@ export function BunnyVideoInput(props: ObjectInputProps) {
         <>
           <Card padding={3} border>
             <Stack space={3}>
-              <Switch
+              <Checkbox
                 checked={value?.preview || false}
                 onChange={handlePreviewToggle}
               />
