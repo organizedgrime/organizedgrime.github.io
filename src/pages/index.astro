@@ -35,7 +35,7 @@ const work = await Promise.all(
       <section>
         <article class="space-y-4">
           <p class="animate">
-            I love to create, to solve challenging problems, and to blend and overlap my interests with one another. 
+            I love to create, to solve challenging problems, and to blend and overlap my interests with one another.
           </p>
           <p class="animate">
           </p>
@@ -65,28 +65,12 @@ const work = await Promise.all(
           <h5 class="font-semibold text-black dark:text-white">
             Work Experience
           </h5>
-          <Link href="/work">
-            See all work
-          </Link>
         </div>
-        <ul class="flex flex-col space-y-4">
-          {work.map(entry => (
-            <li>
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">
-                {entry.data.role}
-              </div>
-              <article>
-                <entry.Content />
-              </article>
-            </li>
-          ))}
-        </ul>
+        <div>
+          I'm currently in the process of rewriting my website.
+          Feel free to check out the WIP <Link href="https://recursivepaws.dev">here</Link>.
+          My current resume is available <Link href="/resume.pdf">here</Link>.
+        </div>
       </section>
 
       <section class="animate space-y-4">
