@@ -8,7 +8,7 @@ import { SOFTWARE } from "@consts";
 const data = (await getCollection("software"))
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  
+
 type Acc = {
   [year: string]: CollectionEntry<"software">[];
 }
@@ -22,7 +22,7 @@ const posts = data.reduce((acc: Acc, post) => {
     return acc;
   }, {});
 
-const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a)); 
+const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
 ---
 <PageLayout title={ SOFTWARE.TITLE } description={ SOFTWARE.DESCRIPTION }>
   <Container>
@@ -33,7 +33,7 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
       <div class="animate text-black dark:text-white">
 		  <p set:html={ SOFTWARE.DESCRIPTION }/>
 		  <br />
-		  <p>I've writen a lot of software. I've written less about writing software. To see a more comprehensive index of my software bibliography, check out <u><a href="https://github.com/organizedgrime">my GitHub</a></u>.</p>
+		  <p>I've writen a lot of software. I've written less about writing software. To see a more comprehensive index of my software bibliography, check out <u><a href="https://github.com/recursivepaws">my GitHub</a></u>.</p>
       </div>
       <div class="space-y-4">
         {years.map(year => (
